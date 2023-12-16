@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CropSmartAPI.Server", "CropSmartAPI.Server\CropSmartAPI.Server.csproj", "{1B0C5485-0BC9-4ECE-9525-B30E0CDB3C39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CropSmartAPI.DAL", "CropSmartAPI.DAL\CropSmartAPI.DAL.csproj", "{51D238BA-0E4B-49D9-8D58-32589A04951D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CropSmartAPI.Core", "CropSmartAPI.Core\CropSmartAPI.Core.csproj", "{D20A8212-E5E4-4707-B286-884B86850A13}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51D238BA-0E4B-49D9-8D58-32589A04951D} = {51D238BA-0E4B-49D9-8D58-32589A04951D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B0C5485-0BC9-4ECE-9525-B30E0CDB3C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0C5485-0BC9-4ECE-9525-B30E0CDB3C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0C5485-0BC9-4ECE-9525-B30E0CDB3C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0C5485-0BC9-4ECE-9525-B30E0CDB3C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51D238BA-0E4B-49D9-8D58-32589A04951D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D238BA-0E4B-49D9-8D58-32589A04951D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51D238BA-0E4B-49D9-8D58-32589A04951D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51D238BA-0E4B-49D9-8D58-32589A04951D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20A8212-E5E4-4707-B286-884B86850A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20A8212-E5E4-4707-B286-884B86850A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20A8212-E5E4-4707-B286-884B86850A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20A8212-E5E4-4707-B286-884B86850A13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B810B05D-91ED-4231-8578-827033EAE08B}
+	EndGlobalSection
+EndGlobal
