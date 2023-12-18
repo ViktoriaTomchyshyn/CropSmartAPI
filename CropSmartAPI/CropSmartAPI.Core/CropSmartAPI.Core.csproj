@@ -11,9 +11,4 @@
     <ProjectReference Include="..\CropSmartAPI.DAL\CropSmartAPI.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dto\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

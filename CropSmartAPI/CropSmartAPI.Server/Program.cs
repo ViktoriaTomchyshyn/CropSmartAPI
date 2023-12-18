@@ -1,10 +1,15 @@
+using CropSmartAPI.Core.Services;
+using CropSmartAPI.Core.Services.Interfaces;
 using CropSmartAPI.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Program>());
 
 // Add services to the container.
 var dbContextOptions = builder.Services.AddDbContextFactory<DataContext>();
+
+builder.Services.AddTransient<IFertilizerService, FertilizerService>();
 
 
 builder.Services.AddControllers();
