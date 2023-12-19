@@ -51,6 +51,11 @@ public class FertilizerService : IFertilizerService
         return await _dbContext.Fertilizers.Where(p => p.CropId == cropId).ToListAsync();
     }
 
+    public async Task<Fertilizer> Get(int id)
+    {
+        return await _dbContext.Fertilizers.FirstOrDefaultAsync(p => p.Id == id);
+    }
+
     public async Task<int> Update(int id, FertilizerDto newObj)
     {
         Fertilizer existingObj = await _dbContext.Fertilizers.FirstOrDefaultAsync(p => p.Id == id);
