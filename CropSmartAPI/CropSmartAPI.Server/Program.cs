@@ -11,6 +11,8 @@ var dbContextOptions = builder.Services.AddDbContextFactory<DataContext>();
 
 builder.Services.AddTransient<IFertilizerService, FertilizerService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IFieldService, FieldService>();
+builder.Services.AddTransient<ICropService, CropService>();
 
 
 builder.Services.AddControllers();

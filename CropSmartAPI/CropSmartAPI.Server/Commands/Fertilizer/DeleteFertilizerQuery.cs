@@ -6,11 +6,11 @@ using MediatR;
 
 namespace CropSmartAPI.Server.Commands.Fertilizer;
 
-public class GetFertilizerQuery : IRequest<Result<FertilizerDto, string>>
+public class DeleteFertilizerQuery : IRequest<Result<FertilizerDto, string>>
 {
     public int Id { get; set; }
 
-    public class Handler : IRequestHandler<GetFertilizerQuery, Result<FertilizerDto, string>>
+    public class Handler : IRequestHandler<DeleteFertilizerQuery, Result<FertilizerDto, string>>
     {
         private readonly IFertilizerService _fertilizerService;
 
@@ -19,10 +19,10 @@ public class GetFertilizerQuery : IRequest<Result<FertilizerDto, string>>
             _fertilizerService = service;
         }
 
-        public async Task<Result<FertilizerDto, string>> Handle(GetFertilizerQuery request,
+        public async Task<Result<FertilizerDto, string>> Handle(DeleteFertilizerQuery request,
             CancellationToken cancellationToken)
         {
-            var obj = await _fertilizerService.Get(request.Id);
+            var obj = await _fertilizerService.Delete(request.Id);
 
             if (obj == null)
             {
@@ -33,11 +33,12 @@ public class GetFertilizerQuery : IRequest<Result<FertilizerDto, string>>
             {
                 Id = obj.Id,
                 Name = obj.Name,
-                Quantity = obj.Quantity,
                 CropId = obj.CropId,
+                Quantity = obj.Quantity,
             };
 
             return Result.Success<FertilizerDto, string>(result);
         }
     }
 }
+

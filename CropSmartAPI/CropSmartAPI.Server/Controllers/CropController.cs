@@ -1,5 +1,5 @@
 ﻿using CropSmartAPI.Server.Commands.Crop;
-using CropSmartAPI.Server.Commands.Fertilizer;
+using CropSmartAPI.Server.Commands.Field;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,18 +7,17 @@ namespace CropSmartAPI.Server.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class FertilizerController: ControllerBase
+public class CropController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public FertilizerController(IMediator mediator)
+    public CropController(IMediator mediator)
     {
         _mediator = mediator;
     }
 
-
     [HttpGet("get")]
-    public async Task<IActionResult> GetFertilizer([FromQuery] GetFertilizerQuery query)
+    public async Task<IActionResult> GetCrop([FromQuery] GetCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -31,8 +30,8 @@ public class FertilizerController: ControllerBase
     }
 
 
-    [HttpGet ("getbycropid")]
-    public async Task<IActionResult> GetFertilizerByCrop([FromQuery] GetFertilizerByCropQuery query)
+    [HttpGet("getbyfieldid")]
+    public async Task<IActionResult> GetCropsByField([FromQuery] GetCropsByFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -45,7 +44,7 @@ public class FertilizerController: ControllerBase
     }
 
     [HttpGet("add")]
-    public async Task<IActionResult> AddFertilizer([FromQuery] AddFertilizerQuery query)
+    public async Task<IActionResult> AddCrop([FromQuery] AddCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -58,7 +57,7 @@ public class FertilizerController: ControllerBase
     }
 
     [HttpGet("update")]
-    public async Task<IActionResult> UpdateFertilizer([FromQuery] UpdateFertilizerQuery query)
+    public async Task<IActionResult> UpdateCrop([FromQuery] UpdateCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -71,7 +70,7 @@ public class FertilizerController: ControllerBase
     }
 
     [HttpGet("delete")]
-    public async Task<IActionResult> DeleteFertilizer([FromQuery] DeleteFertilizerQuery query)
+    public async Task<IActionResult> DeleteCrop([FromQuery] DeleteCropQuery query)
     {
         var result = await _mediator.Send(query);
 
