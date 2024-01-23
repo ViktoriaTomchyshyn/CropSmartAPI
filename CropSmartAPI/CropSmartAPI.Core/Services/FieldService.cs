@@ -30,6 +30,8 @@ public class FieldService : IFieldService
             CadastralNumber = obj.CadastralNumber,
             Area = obj.Area,
             PropertyRight = obj.PropertyRight,
+            CoordinateX = obj.CoordinateX,
+            CoordinateY = obj.CoordinateY,
             Userid = obj.Userid
         };
         var result = _dbContext.Fields.Add(newObj);
@@ -67,6 +69,8 @@ public class FieldService : IFieldService
         existingObj.CadastralNumber = newObj.CadastralNumber;
         existingObj.Area = newObj.Area;
         existingObj.Userid = newObj.Userid;
+        existingObj.CoordinateX = newObj.CoordinateX;
+        existingObj.CoordinateY = newObj.CoordinateY;
         existingObj.PropertyRight = newObj.PropertyRight;
 
         await _dbContext.CompleteAsync();

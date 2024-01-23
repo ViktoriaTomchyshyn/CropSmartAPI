@@ -37,6 +37,8 @@ public class DeleteFieldQuery : IRequest<Result<FieldDto, string>>
                 CadastralNumber = obj.CadastralNumber,
                 Area = obj.Area,
                 PropertyRight = obj.PropertyRight,
+                CoordinateX = obj.CoordinateX,
+                CoordinateY = obj.CoordinateY,
                 Userid = obj.Userid
             };
 

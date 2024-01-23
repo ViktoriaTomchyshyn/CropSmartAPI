@@ -36,6 +36,8 @@ public class GetFieldQuery : IRequest<Result<FieldDto, string>>
                 Area = obj.Area,
                 CadastralNumber = obj.CadastralNumber,
                 PropertyRight = obj.PropertyRight,
+                CoordinateX = obj.CoordinateX,
+                CoordinateY = obj.CoordinateY,
                 Userid = obj.Userid,
             };
 

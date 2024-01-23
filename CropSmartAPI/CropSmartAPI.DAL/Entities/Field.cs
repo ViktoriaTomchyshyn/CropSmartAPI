@@ -15,6 +15,8 @@ public class Field
     public string Name { get; set; }
     public double Area { get; set; }
     public PropertyRight PropertyRight { get; set; }
+    public double CoordinateX { get; set; }
+    public double CoordinateY { get; set; }
 
     //maybe rent time 
     public int Userid { get; set; }
