@@ -36,6 +36,7 @@ public class GetFieldsByUserQuery : IRequest<Result<List<FieldDto>, string>>
                 Name = p.Name,
                 Area = p.Area,
                 PropertyRight = p.PropertyRight,
+                SoilType = p.SoilType,
                 CoordinateX = p.CoordinateX,
                 CoordinateY = p.CoordinateY,
                 Userid = p.Userid

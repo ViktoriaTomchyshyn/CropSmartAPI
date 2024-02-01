@@ -14,6 +14,7 @@ public class UpdateFieldQuery : IRequest<Result<int, string>>
     public string Name { get; set; }
     public double Area { get; set; }
     public PropertyRight PropertyRight { get; set; }
+    public SoilType SoilType { get; set; }
     public double CoordinateX { get; set; }
     public double CoordinateY { get; set; }
     public int Userid { get; set; }
@@ -36,6 +37,7 @@ public class UpdateFieldQuery : IRequest<Result<int, string>>
                 CadastralNumber = request.CadastralNumber,
                 Area = request.Area,
                 PropertyRight = request.PropertyRight,
+                SoilType = request.SoilType,
                 CoordinateX = request.CoordinateX,
                 CoordinateY = request.CoordinateY,
                 Userid = request.Userid,

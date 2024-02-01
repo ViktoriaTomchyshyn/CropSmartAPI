@@ -30,6 +30,7 @@ public class FieldService : IFieldService
             CadastralNumber = obj.CadastralNumber,
             Area = obj.Area,
             PropertyRight = obj.PropertyRight,
+            SoilType = obj.SoilType,
             CoordinateX = obj.CoordinateX,
             CoordinateY = obj.CoordinateY,
             Userid = obj.Userid
@@ -69,6 +70,7 @@ public class FieldService : IFieldService
         existingObj.CadastralNumber = newObj.CadastralNumber;
         existingObj.Area = newObj.Area;
         existingObj.Userid = newObj.Userid;
+        existingObj.SoilType = newObj.SoilType;
         existingObj.CoordinateX = newObj.CoordinateX;
         existingObj.CoordinateY = newObj.CoordinateY;
         existingObj.PropertyRight = newObj.PropertyRight;
