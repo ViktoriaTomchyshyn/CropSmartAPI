@@ -1,0 +1,205 @@
+﻿{
+  "Scenario": "Forecasting",
+  "DataSource": {
+    "Type": "SQL",
+    "Version": 1,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Name",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "SowingDate",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "DateTime",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "HarverstDate",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "DateTime",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Fertility",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Notes",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "FieldId",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      }
+    ],
+    "ConnectionString": "Data Source=DESKTOP-JJTRH2D;Initial Catalog=CropSmartDB;Integrated Security=True",
+    "CommandString": "SELECT CAST([Id] as REAL), CAST([Name] as NVARCHAR(MAX)), [SowingDate], [HarverstDate], CAST([Fertility] as REAL), CAST([Notes] as NVARCHAR(MAX)), CAST([FieldId] as REAL) FROM [dbo].[Crops]",
+    "DatabaseName": "CropSmartDB",
+    "SelectedTableDbo": "dbo",
+    "TableName": "Crops"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 153.60074107896807,
+        "RuntimeInSeconds": 0.289,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 10,
+            "TrainSize": 11,
+            "Horizon": 5,
+            "OutputColumnName": "Fertility",
+            "InputColumnName": "Fertility",
+            "ConfidenceLowerBoundColumn": "Fertility_LB",
+            "ConfidenceUpperBoundColumn": "Fertility_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 153.60074107896807,
+        "RuntimeInSeconds": 0.01,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 2644,
+            "TrainSize": 11,
+            "Horizon": 5,
+            "OutputColumnName": "Fertility",
+            "InputColumnName": "Fertility",
+            "ConfidenceLowerBoundColumn": "Fertility_LB",
+            "ConfidenceUpperBoundColumn": "Fertility_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 153.60074107896807,
+        "RuntimeInSeconds": 0.003,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 951,
+            "TrainSize": 11,
+            "Horizon": 5,
+            "OutputColumnName": "Fertility",
+            "InputColumnName": "Fertility",
+            "ConfidenceLowerBoundColumn": "Fertility_LB",
+            "ConfidenceUpperBoundColumn": "Fertility_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 153.60074107896807,
+        "RuntimeInSeconds": 0.004,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 953,
+            "TrainSize": 11,
+            "Horizon": 5,
+            "OutputColumnName": "Fertility",
+            "InputColumnName": "Fertility",
+            "ConfidenceLowerBoundColumn": "Fertility_LB",
+            "ConfidenceUpperBoundColumn": "Fertility_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 153.60074107896807,
+        "RuntimeInSeconds": 0.004,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 278,
+            "TrainSize": 11,
+            "Horizon": 5,
+            "OutputColumnName": "Fertility",
+            "InputColumnName": "Fertility",
+            "ConfidenceLowerBoundColumn": "Fertility_LB",
+            "ConfidenceUpperBoundColumn": "Fertility_UB"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ForecastBySsa"
+    },
+    "Schema": "e0",
+    "MetricName": "RMSE",
+    "ModelFilePath": "D:\\універ\\4 курс\\diploma\\CropSmartAPI\\CropSmartAPI\\CropSmart.ML\\CropPredictModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 3,
+    "OptimizeMetric": "RMSE",
+    "Subsampling": false,
+    "Type": "ForecastingTrainingOption",
+    "TrainingTime": 30,
+    "UseCrossValidation": false,
+    "Horizon": 5,
+    "TimeColumn": "FieldId",
+    "LabelColumn": "Fertility",
+    "UseDefaultIndex": false,
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
