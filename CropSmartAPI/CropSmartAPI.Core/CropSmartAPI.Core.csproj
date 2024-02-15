@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CropSmart.ML\CropSmart.ML.csproj" />
     <ProjectReference Include="..\CropSmartAPI.DAL\CropSmartAPI.DAL.csproj" />
   </ItemGroup>
 
