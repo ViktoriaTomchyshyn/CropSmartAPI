@@ -10,6 +10,7 @@ builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Progra
 var dbContextOptions = builder.Services.AddDbContextFactory<DataContext>();
 
 builder.Services.AddTransient<IFertilizerService, FertilizerService>();
+builder.Services.AddTransient<IFertilityPredictionService, FertilityPredictionService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IFieldService, FieldService>();
 builder.Services.AddTransient<ICropService, CropService>();

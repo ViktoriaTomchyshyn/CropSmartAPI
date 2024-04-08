@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CropSmartAPI.Core.PredictObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,4 +9,5 @@ namespace CropSmartAPI.Core.Services.Interfaces;
 
 public interface IFertilityPredictionService
 {
+    Task<PredictResult> PredictFertility(int fieldId);
 }

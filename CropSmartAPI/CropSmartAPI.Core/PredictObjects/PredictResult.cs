@@ -8,5 +8,9 @@ namespace CropSmartAPI.Core.PredictObjects
 {
     public class PredictResult
     {
+        public float LowerFertilityValue { get; set; }
+        public float UpperFertilityValue { get; set; }
+        public float AverageFertilityValue { get; set; }
+        public ResultType ResultType { get; set; }
     }
 }

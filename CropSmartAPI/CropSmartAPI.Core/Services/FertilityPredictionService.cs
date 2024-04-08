@@ -26,36 +26,60 @@ public class FertilityPredictionService : IFertilityPredictionService
 
     public async Task<PredictResult> PredictFertility(int fieldId)
     {
-       var crops = await _dbContext.Crops.Where(p => p.FieldId == fieldId).ToListAsync();
-       var modelInput = GetAverageFertility(crops);
+        var crops = await _dbContext.Crops.Where(p => p.FieldId == fieldId).ToListAsync();
+        var modelInput = GetAverageFertility(crops);
 
-       var sampleData = new CropPredictModel.ModelInput()
-       {
-           Fertility = modelInput
-       };
+        var sampleData = new CropPredictModel.ModelInput()
+        {
+            Fertility = modelInput
+        };
 
-       var result = CropPredictModel.Predict(sampleData);
+        var result = CropPredictModel.Predict(sampleData);
 
-       _logger.LogInformation(result.Fertility_LB[0] + ", " + result.Fertility_UB[0]);
+        var lowerValue = result.Fertility_LB[0];
+        var upperValue = result.Fertility_UB[0];
+        var averageValue = (lowerValue + upperValue) / 2;
 
-        return new PredictResult();
+        _logger.LogInformation(lowerValue + ", " + upperValue);
+
+        return new PredictResult()
+        {
+            LowerFertilityValue = lowerValue,
+            UpperFertilityValue = upperValue,
+            AverageFertilityValue = averageValue,
+            ResultType = GetResultType(lowerValue, upperValue)
+        };
     }
 
     private float GetAverageFertility(List<Crop> crops)
     {
-        // Filter crops that have field fertility
         var cropsWithFertility = crops.Where(crop => crop.Fertility != 0);
 
-        // If there are no crops with fertility, return 0 or handle accordingly
         if (!cropsWithFertility.Any())
         {
             return 0; // or throw exception, return NaN, etc.
         }
 
-        // Calculate average fertility
         double totalFertility = cropsWithFertility.Sum(crop => crop.Fertility);
         double averageFertility = totalFertility / cropsWithFertility.Count();
 
         return ((float)averageFertility);
+    }
+
+    private ResultType GetResultType(float lowerValue, float upperValue)
+    {
+        var averageValue = (lowerValue + upperValue) / 2;
+
+        if (averageValue < 165)
+        {
+            return ResultType.Poor;
+        }
+
+        if (averageValue < 200)
+        {
+            return ResultType.Medium;
+        }
+
+        return ResultType.High;
     }
 }
