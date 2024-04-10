@@ -8,6 +8,7 @@ namespace CropSmartAPI.Server.Commands.Fertilizer;
 
 public class UpdateFertilizerQuery : IRequest<Result<int, string>>
 {
+    public string Key { get; set; }
     public int Id { get; set; }
     public string Name { get; set; }
     public long Quantity { get; set; }
@@ -16,15 +17,18 @@ public class UpdateFertilizerQuery : IRequest<Result<int, string>>
     public class Handler : IRequestHandler<UpdateFertilizerQuery, Result<int, string>>
     {
         private readonly IFertilizerService _fertilizerService;
+        private readonly ISessionControlService _sessionControlService;
 
-        public Handler(IFertilizerService service)
+        public Handler(IFertilizerService service, ISessionControlService sessionControlService)
         {
             _fertilizerService = service;
+            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<int, string>> Handle(UpdateFertilizerQuery request,
             CancellationToken cancellationToken)
         {
+            _sessionControlService.IsLoggedIn(request.Key);
             var obj = new FertilizerDto
             {
                 Name = request.Name,

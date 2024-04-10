@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CropSmart.ML\CropSmart.ML.csproj" />
     <ProjectReference Include="..\CropSmartAPI.DAL\CropSmartAPI.DAL.csproj" />
   </ItemGroup>

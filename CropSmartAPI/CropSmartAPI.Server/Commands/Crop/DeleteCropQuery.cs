@@ -8,20 +8,24 @@ namespace CropSmartAPI.Server.Commands.Crop;
 
 public class DeleteCropQuery : IRequest<Result<CropDto, string>>
 {
+    public string Key { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<DeleteCropQuery, Result<CropDto, string>>
     {
         private readonly ICropService _cropService;
+        private readonly ISessionControlService _sessionControlService;
 
-        public Handler(ICropService service)
+        public Handler(ICropService service, ISessionControlService sessionControlService)
         {
             _cropService = service;
+            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<CropDto, string>> Handle(DeleteCropQuery request,
             CancellationToken cancellationToken)
         {
+            _sessionControlService.IsLoggedIn(request.Key);
             var obj = await _cropService.Delete(request.Id);
 
             if (obj == null)

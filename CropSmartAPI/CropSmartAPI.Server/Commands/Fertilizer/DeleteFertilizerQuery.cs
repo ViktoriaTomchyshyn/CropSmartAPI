@@ -8,20 +8,24 @@ namespace CropSmartAPI.Server.Commands.Fertilizer;
 
 public class DeleteFertilizerQuery : IRequest<Result<FertilizerDto, string>>
 {
+    public string Key { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<DeleteFertilizerQuery, Result<FertilizerDto, string>>
     {
         private readonly IFertilizerService _fertilizerService;
+        private readonly ISessionControlService _sessionControlService;
 
-        public Handler(IFertilizerService service)
+        public Handler(IFertilizerService service, ISessionControlService sessionControlService)
         {
             _fertilizerService = service;
+            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<FertilizerDto, string>> Handle(DeleteFertilizerQuery request,
             CancellationToken cancellationToken)
         {
+            _sessionControlService.IsLoggedIn(request.Key);
             var obj = await _fertilizerService.Delete(request.Id);
 
             if (obj == null)

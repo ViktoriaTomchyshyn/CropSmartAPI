@@ -8,20 +8,24 @@ namespace CropSmartAPI.Server.Commands.User;
 
 public class GetUserQuery : IRequest<Result<UserDto, string>>
 {
+    public string Key { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<GetUserQuery, Result<UserDto, string>>
     {
         private readonly IUserService _userService;
+        private readonly ISessionControlService _sessionControlService;
 
-        public Handler(IUserService service)
+        public Handler(IUserService service, ISessionControlService sessionControlService)
         {
             _userService = service;
+            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<UserDto, string>> Handle(GetUserQuery request,
             CancellationToken cancellationToken)
         {
+            //_sessionControlService.IsLoggedIn(request.Key);
             var obj = await _userService.Get(request.Id);
 
             if (obj == null)
