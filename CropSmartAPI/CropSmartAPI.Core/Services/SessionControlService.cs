@@ -77,7 +77,7 @@ public class SessionControlService : ISessionControlService
         }
         else
         {
-            if (thatUser.Password == password)
+            if (thatUser.Password == CalculatePasswordHash(password))
             {
                 return Task.FromResult(true);
             }
@@ -157,6 +157,22 @@ public class SessionControlService : ISessionControlService
         return Task.FromResult(result);
     }
 
+    private string CalculatePasswordHash(string input)
+    {
+        using (MD5 md5 = MD5.Create())
+        {
+            byte[] inputBytes = Encoding.UTF8.GetBytes(input + "gfhjh755");
+            byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("x2"));
+            }
+
+            return sb.ToString();
+        }
+    }
     private string GenerateKey(string login, string password)
     {
         long timeStamp = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;

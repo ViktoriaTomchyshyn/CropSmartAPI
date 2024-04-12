@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,7 +31,7 @@ namespace CropSmartAPI.Core.Services
                 Name = obj.Name,
                 Surname = obj.Surname,
                 Email = obj.Email,
-                Password = obj.Password
+                Password = CalculatePasswordHash(obj.Password)
             };
             var result = _dbContext.Users.Add(newObj);
             await _dbContext.CompleteAsync();
@@ -61,10 +62,27 @@ namespace CropSmartAPI.Core.Services
             existingObj.Name = newObj.Name;
             existingObj.Surname = newObj.Surname;
             existingObj.Email = newObj.Email;
-            existingObj.Password = newObj.Password;
+            existingObj.Password = CalculatePasswordHash(newObj.Password);
 
             await _dbContext.CompleteAsync();
             return existingObj.Id;
+        }
+
+        private string CalculatePasswordHash(string input)
+        {
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input + "gfhjh755");
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("x2"));
+                }
+
+                return sb.ToString();
+            }
         }
     }
 }
