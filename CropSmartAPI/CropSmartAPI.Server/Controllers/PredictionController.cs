@@ -16,7 +16,7 @@ public class PredictionController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost("predictFertility")]
+    [HttpGet("predictFertility")]
     public async Task<IActionResult> PredictFertility([FromQuery] PredictFertilityQuery query)
     {
         var result = await _mediator.Send(query);

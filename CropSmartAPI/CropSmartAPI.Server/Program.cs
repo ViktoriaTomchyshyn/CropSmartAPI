@@ -1,4 +1,3 @@
-using CropSmartAPI.Core.Filters;
 using CropSmartAPI.Core.Services;
 using CropSmartAPI.Core.Services.Interfaces;
 using CropSmartAPI.Core.SessionObjects;
@@ -20,7 +19,6 @@ builder.Services.AddTransient<IFieldService, FieldService>();
 builder.Services.AddTransient<ICropService, CropService>();
 builder.Services.AddTransient<ISessionControlService, SessionControlService>();
 builder.Services.AddSingleton<ISessionList, SessionList>();
-builder.Services.AddScoped<AccessCheckFilter>();
 
 
 builder.Services.AddControllers();

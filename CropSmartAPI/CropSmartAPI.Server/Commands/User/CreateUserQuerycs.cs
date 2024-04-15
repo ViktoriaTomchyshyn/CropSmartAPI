@@ -2,8 +2,6 @@
 using CropSmartAPI.Core.Services.Interfaces;
 using CSharpFunctionalExtensions;
 using MediatR;
-using Microsoft.AspNetCore.Http.Features;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace CropSmartAPI.Server.Commands.User;
 
