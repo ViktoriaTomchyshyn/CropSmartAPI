@@ -17,7 +17,7 @@ public class UserController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("create")]
+    [HttpPost("create")]
     public async Task<IActionResult> CreateUser([FromQuery] CreateUserQuery query)
     {
         var result = await _mediator.Send(query);
@@ -30,7 +30,7 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("get")]
+    [HttpPost("get")]
     public async Task<IActionResult> GetUser([FromQuery] GetUserQuery query)
     {
         var result = await _mediator.Send(query);
@@ -43,7 +43,7 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("update")]
+    [HttpPost("update")]
     public async Task<IActionResult> UpdateUser([FromQuery] UpdateUserQuery query)
     {
         var result = await _mediator.Send(query);
@@ -56,7 +56,7 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("delete")]
+    [HttpPost("delete")]
     public async Task<IActionResult> DeleteUser([FromQuery] DeleteUserQuery query)
     {
         var result = await _mediator.Send(query);

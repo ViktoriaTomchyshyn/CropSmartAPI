@@ -14,7 +14,7 @@ public class LoginController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("logIn")]
+    [HttpPost("logIn")]
     public async Task<IActionResult> LogIn([FromQuery] LogInQuery query)
     {
         var result = await _mediator.Send(query);
@@ -27,7 +27,7 @@ public class LoginController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("logOut")]
+    [HttpPost("logOut")]
     public async Task<IActionResult> LogOut([FromQuery] LogOutQuery query)
     {
         var result = await _mediator.Send(query);
