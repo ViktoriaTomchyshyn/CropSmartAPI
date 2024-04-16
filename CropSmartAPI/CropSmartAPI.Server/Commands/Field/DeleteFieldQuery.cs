@@ -9,25 +9,22 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class DeleteFieldQuery : IRequest<Result<FieldDto, string>>
 {
-    public string Key { get; set; }
+    public int UserId { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<DeleteFieldQuery, Result<FieldDto, string>>
     {
         private readonly IFieldService _fieldService;
-        private readonly ISessionControlService _sessionControlService;
-
-        public Handler(IFieldService service, ISessionControlService sessionControlService)
+      
+        public Handler(IFieldService service)
         {
             _fieldService = service;
-            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<FieldDto, string>> Handle(DeleteFieldQuery request,
             CancellationToken cancellationToken)
         {
-            _sessionControlService.IsLoggedIn(request.Key);
-            var obj = await _fieldService.Delete(request.Id);
+            var obj = await _fieldService.Delete(request.UserId, request.Id);
 
             if (obj == null)
             {

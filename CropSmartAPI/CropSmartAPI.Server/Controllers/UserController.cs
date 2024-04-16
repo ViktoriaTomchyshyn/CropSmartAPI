@@ -1,4 +1,5 @@
-﻿using CropSmartAPI.Server.Commands.Fertilizer;
+﻿using CropSmartAPI.Core.Filters;
+using CropSmartAPI.Server.Commands.Fertilizer;
 using CropSmartAPI.Server.Commands.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ namespace CropSmartAPI.Server.Controllers;
 
 
 [ApiController]
+[ServiceFilter(typeof(AccessCheckFilter))]
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
@@ -17,8 +19,8 @@ public class UserController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("create")]
-    public async Task<IActionResult> CreateUser([FromQuery] CreateUserQuery query)
+    [HttpPost("create")]
+    public async Task<IActionResult> CreateUser([FromHeader(Name = "Key")] string key, [FromQuery] CreateUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -31,7 +33,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<IActionResult> GetUser([FromQuery] GetUserQuery query)
+    public async Task<IActionResult> GetUser([FromHeader(Name = "Key")] string key, [FromQuery] GetUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -43,8 +45,8 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("update")]
-    public async Task<IActionResult> UpdateUser([FromQuery] UpdateUserQuery query)
+    [HttpPut("update")]
+    public async Task<IActionResult> UpdateUser([FromHeader(Name = "Key")] string key, [FromQuery] UpdateUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -56,8 +58,8 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("delete")]
-    public async Task<IActionResult> DeleteUser([FromQuery] DeleteUserQuery query)
+    [HttpDelete("delete")]
+    public async Task<IActionResult> DeleteUser([FromHeader(Name = "Key")] string key, [FromQuery] DeleteUserQuery query)
     {
         var result = await _mediator.Send(query);
 

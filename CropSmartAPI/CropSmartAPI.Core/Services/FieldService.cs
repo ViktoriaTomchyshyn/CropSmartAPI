@@ -40,9 +40,9 @@ public class FieldService : IFieldService
         return result.Entity.Id;
     }
 
-    public async Task<Field> Delete(int id)
+    public async Task<Field> Delete(int userId, int id)
     {
-        var obj = await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id);
+        var obj = await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id && p.Userid == userId);
         if (obj == null)
             return null;
 
@@ -50,26 +50,33 @@ public class FieldService : IFieldService
         return obj;
     }
 
-    public async Task<Field> Get(int id)
+    public async Task<Field> Get(int userId, int id)
     {
-        return await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id);
+        return await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id && p.Userid == userId);
     }
 
-    public async Task<List<Field>> GetByUser(int userId)
+    public async Task<List<Field>> GetAll(int userId,string searchQuery)
     {
-        return await _dbContext.Fields.Where(p => p.Userid == userId).ToListAsync();
+        if (searchQuery is null ) {
+           searchQuery = "";
+        }
+        var result = await _dbContext.Fields.Where(p =>
+            p.Userid == userId && (
+                p.Name.Contains(searchQuery) ||
+                p.CadastralNumber.Contains(searchQuery))).ToListAsync();
+
+        return result;
     }
 
     public async Task<int> Update(int id, FieldDto newObj)
     {
-        Field existingObj = await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id);
+        Field existingObj = await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id && p.Userid == newObj.Userid);
         if (existingObj == null)
             throw new ArgumentException("Field not found");
 
         existingObj.Name = newObj.Name;
         existingObj.CadastralNumber = newObj.CadastralNumber;
         existingObj.Area = newObj.Area;
-        existingObj.Userid = newObj.Userid;
         existingObj.SoilType = newObj.SoilType;
         existingObj.CoordinateX = newObj.CoordinateX;
         existingObj.CoordinateY = newObj.CoordinateY;

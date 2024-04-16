@@ -7,9 +7,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace CropSmartAPI.Core.Services;
 
@@ -28,10 +30,6 @@ public class SessionControlService : ISessionControlService
     public Task<bool> IsLoggedIn(string key)
     {
         bool isExisting = ifSessionExist(key).Result;
-        if (!isExisting)
-        {
-            throw new Exception("Access denied");
-        }
         UpdateLastOperationTime(key);
         return Task.FromResult(isExisting);
     }
@@ -59,8 +57,9 @@ public class SessionControlService : ISessionControlService
 
 
 
-    private Task<bool> CheckIfValidData(string login, string password)
-    {
+   private Task<bool> CheckIfValidData(string login, string password)
+   {
+
         User thatUser = null;
         foreach (var user in _dbContext.Users)
         {
@@ -68,7 +67,6 @@ public class SessionControlService : ISessionControlService
             {
                 thatUser = user;
             }
-
         }
 
         if (thatUser == null)
@@ -86,7 +84,8 @@ public class SessionControlService : ISessionControlService
                 throw new Exception("Password is incorrect");
             }
         }
-    }
+   }
+
 
     private Task<bool> DeleteOldSessionIfExists(string login)
     {
