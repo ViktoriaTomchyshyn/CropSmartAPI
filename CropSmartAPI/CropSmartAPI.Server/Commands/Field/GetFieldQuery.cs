@@ -8,6 +8,7 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class GetFieldQuery : IRequest<Result<FieldDto, string>>
 {
+    public int UserId { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<GetFieldQuery, Result<FieldDto, string>>
@@ -22,7 +23,7 @@ public class GetFieldQuery : IRequest<Result<FieldDto, string>>
         public async Task<Result<FieldDto, string>> Handle(GetFieldQuery request,
             CancellationToken cancellationToken)
         {
-            var obj = await _fieldService.Get(request.Id);
+            var obj = await _fieldService.Get(request.UserId, request.Id);
 
             if (obj == null)
             {

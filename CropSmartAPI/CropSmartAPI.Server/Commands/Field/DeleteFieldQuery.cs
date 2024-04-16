@@ -9,6 +9,7 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class DeleteFieldQuery : IRequest<Result<FieldDto, string>>
 {
+    public int UserId { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<DeleteFieldQuery, Result<FieldDto, string>>
@@ -23,7 +24,7 @@ public class DeleteFieldQuery : IRequest<Result<FieldDto, string>>
         public async Task<Result<FieldDto, string>> Handle(DeleteFieldQuery request,
             CancellationToken cancellationToken)
         {
-            var obj = await _fieldService.Delete(request.Id);
+            var obj = await _fieldService.Delete(request.UserId, request.Id);
 
             if (obj == null)
             {
