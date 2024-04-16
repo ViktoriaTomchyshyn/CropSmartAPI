@@ -8,24 +8,20 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class GetFieldsByUserQuery : IRequest<Result<List<FieldDto>, string>>
 {
-    public string Key { get; set; }
-    public int UserId { get; set; }
+   public int UserId { get; set; }
 
     public class Handler : IRequestHandler<GetFieldsByUserQuery, Result<List<FieldDto>, string>>
     {
         private readonly IFieldService _fieldService;
-        private readonly ISessionControlService _sessionControlService;
-
-        public Handler(IFieldService service, ISessionControlService sessionControlService)
+       
+        public Handler(IFieldService service)
         {
             _fieldService = service;
-            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<List<FieldDto>, string>> Handle(GetFieldsByUserQuery request,
             CancellationToken cancellationToken)
         {
-            _sessionControlService.IsLoggedIn(request.Key);
             var field = await _fieldService.GetByUser(request.UserId);
 
             if (!field?.Any() ?? true)

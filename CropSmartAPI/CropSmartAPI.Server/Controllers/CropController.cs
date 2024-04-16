@@ -1,4 +1,5 @@
-﻿using CropSmartAPI.Server.Commands.Crop;
+﻿using CropSmartAPI.Core.Filters;
+using CropSmartAPI.Server.Commands.Crop;
 using CropSmartAPI.Server.Commands.Field;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CropSmartAPI.Server.Controllers;
 
 [ApiController]
+[ServiceFilter(typeof(AccessCheckFilter))]
 [Route("[controller]")]
 public class CropController : ControllerBase
 {
@@ -17,7 +19,7 @@ public class CropController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<IActionResult> GetCrop([FromQuery] GetCropQuery query)
+    public async Task<IActionResult> GetCrop([FromHeader(Name = "Key")] string key, [FromQuery] GetCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -31,7 +33,7 @@ public class CropController : ControllerBase
 
 
     [HttpGet("getbyfieldid")]
-    public async Task<IActionResult> GetCropsByField([FromQuery] GetCropsByFieldQuery query)
+    public async Task<IActionResult> GetCropsByField([FromHeader(Name = "Key")] string key, [FromQuery] GetCropsByFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -43,8 +45,8 @@ public class CropController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("add")]
-    public async Task<IActionResult> AddCrop([FromQuery] AddCropQuery query)
+    [HttpPost("add")]
+    public async Task<IActionResult> AddCrop([FromHeader(Name = "Key")] string key, [FromQuery] AddCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -56,8 +58,8 @@ public class CropController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("update")]
-    public async Task<IActionResult> UpdateCrop([FromQuery] UpdateCropQuery query)
+    [HttpPut("update")]
+    public async Task<IActionResult> UpdateCrop([FromHeader(Name = "Key")] string key, [FromQuery] UpdateCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -69,8 +71,8 @@ public class CropController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("delete")]
-    public async Task<IActionResult> DeleteCrop([FromQuery] DeleteCropQuery query)
+    [HttpDelete("delete")]
+    public async Task<IActionResult> DeleteCrop([FromHeader(Name = "Key")] string key, [FromQuery] DeleteCropQuery query)
     {
         var result = await _mediator.Send(query);
 

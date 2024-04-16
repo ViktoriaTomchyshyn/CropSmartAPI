@@ -1,4 +1,5 @@
-﻿using CropSmartAPI.Server.Commands.Fertilizer;
+﻿using CropSmartAPI.Core.Filters;
+using CropSmartAPI.Server.Commands.Fertilizer;
 using CropSmartAPI.Server.Commands.Field;
 using CropSmartAPI.Server.Commands.User;
 using MediatR;
@@ -9,6 +10,7 @@ namespace CropSmartAPI.Server.Controllers;
 
 
 [ApiController]
+[ServiceFilter(typeof(AccessCheckFilter))]
 [Route("[controller]")]
 public class FieldController: ControllerBase
 {
@@ -19,8 +21,9 @@ public class FieldController: ControllerBase
         _mediator = mediator;
     }
 
+    
     [HttpGet("get")]
-    public async Task<IActionResult> GetField([FromQuery] GetFieldQuery query)
+    public async Task<IActionResult> GetField([FromHeader(Name = "Key")] string key, [FromQuery] GetFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -34,7 +37,7 @@ public class FieldController: ControllerBase
 
 
     [HttpGet("getbyuserid")]
-    public async Task<IActionResult> GetFieldsByUser([FromQuery] GetFieldsByUserQuery query)
+    public async Task<IActionResult> GetFieldsByUser([FromHeader(Name = "Key")] string key, [FromQuery] GetFieldsByUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -46,8 +49,8 @@ public class FieldController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("add")]
-    public async Task<IActionResult> AddField([FromQuery] AddFieldQuery query)
+    [HttpPost("add")]
+    public async Task<IActionResult> AddField([FromHeader(Name = "Key")] string key, [FromQuery] AddFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -59,8 +62,8 @@ public class FieldController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("update")]
-    public async Task<IActionResult> UpdateField([FromQuery] UpdateFieldQuery query)
+    [HttpPut("update")]
+    public async Task<IActionResult> UpdateField([FromHeader(Name = "Key")] string key, [FromQuery] UpdateFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -72,8 +75,8 @@ public class FieldController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("delete")]
-    public async Task<IActionResult> DeleteField([FromQuery] DeleteFieldQuery query)
+    [HttpDelete("delete")]
+    public async Task<IActionResult> DeleteField([FromHeader(Name = "Key")] string key, [FromQuery] DeleteFieldQuery query)
     {
         var result = await _mediator.Send(query);
 

@@ -7,24 +7,20 @@ namespace CropSmartAPI.Server.Commands.User;
 
 public class DeleteUserQuery : IRequest<Result<UserDto, string>>
 {
-    public string Key { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<DeleteUserQuery, Result<UserDto, string>>
     {
         private readonly IUserService _userService;
-        private readonly ISessionControlService _sessionControlService;
-
-        public Handler(IUserService service, ISessionControlService sessionControlService)
+       
+        public Handler(IUserService service)
         {
             _userService = service;
-            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<UserDto, string>> Handle(DeleteUserQuery request,
             CancellationToken cancellationToken)
         {
-            _sessionControlService.IsLoggedIn(request.Key);
             var obj = await _userService.Delete(request.Id);
 
             if (obj == null)

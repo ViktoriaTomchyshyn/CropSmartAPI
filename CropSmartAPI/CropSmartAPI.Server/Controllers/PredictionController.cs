@@ -1,4 +1,5 @@
-﻿using CropSmartAPI.Server.Commands.PredictFertility;
+﻿using CropSmartAPI.Core.Filters;
+using CropSmartAPI.Server.Commands.PredictFertility;
 using CropSmartAPI.Server.Commands.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CropSmartAPI.Server.Controllers;
 
 [ApiController]
+[ServiceFilter(typeof(AccessCheckFilter))]
 [Route("[controller]")]
 public class PredictionController : ControllerBase
 {
@@ -17,7 +19,7 @@ public class PredictionController : ControllerBase
     }
 
     [HttpGet("predictFertility")]
-    public async Task<IActionResult> PredictFertility([FromQuery] PredictFertilityQuery query)
+    public async Task<IActionResult> PredictFertility([FromHeader(Name = "Key")] string key, [FromQuery] PredictFertilityQuery query)
     {
         var result = await _mediator.Send(query);
 

@@ -30,7 +30,7 @@ public class SessionControlService : ISessionControlService
         bool isExisting = ifSessionExist(key).Result;
         if (!isExisting)
         {
-            throw new Exception("Access denied");
+           // throw new Exception("Access denied");
         }
         UpdateLastOperationTime(key);
         return Task.FromResult(isExisting);

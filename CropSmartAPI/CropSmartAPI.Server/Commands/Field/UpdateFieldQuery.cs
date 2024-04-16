@@ -9,7 +9,6 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class UpdateFieldQuery : IRequest<Result<int, string>>
 {
-    public string Key { get; set; }
     public int Id { get; set; }
     public string CadastralNumber { get; set; }
     public string Name { get; set; }
@@ -23,18 +22,15 @@ public class UpdateFieldQuery : IRequest<Result<int, string>>
     public class Handler : IRequestHandler<UpdateFieldQuery, Result<int, string>>
     {
         private readonly IFieldService _fieldService;
-        private readonly ISessionControlService _sessionControlService;
-
-        public Handler(IFieldService service, ISessionControlService sessionControlService)
+        
+        public Handler(IFieldService service)
         {
             _fieldService = service;
-            _sessionControlService = sessionControlService;
         }
 
         public async Task<Result<int, string>> Handle(UpdateFieldQuery request,
             CancellationToken cancellationToken)
         {
-            _sessionControlService.IsLoggedIn(request.Key);
             var obj = new FieldDto
             {
                 Name = request.Name,
