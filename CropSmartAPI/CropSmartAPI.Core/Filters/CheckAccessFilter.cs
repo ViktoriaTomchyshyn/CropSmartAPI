@@ -35,7 +35,7 @@ public class AccessCheckFilter : IAsyncActionFilter
         } 
 
         // If the header is missing or empty, return Forbidden
-        context.Result = new StatusCodeResult(StatusCodes.Status403Forbidden);
+        context.Result = new StatusCodeResult(StatusCodes.Status401Unauthorized);
         return Task.CompletedTask;
     }
 }
