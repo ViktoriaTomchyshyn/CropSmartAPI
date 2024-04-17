@@ -13,6 +13,6 @@ public interface IFertilizerService
     Task<int> Create(FertilizerDto obj);
     Task<Fertilizer> Delete(int id);
     Task<Fertilizer> Get(int id);
-    Task<List<Fertilizer>> GetByCrop(int cropId);
+    Task<List<Fertilizer>> Fertilizers(int userId, int cropId, string searchQuery);
     Task<int> Update(int id, FertilizerDto newObj);
 }

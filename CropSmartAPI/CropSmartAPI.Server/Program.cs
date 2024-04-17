@@ -4,6 +4,7 @@ using CropSmartAPI.Core.Services.Interfaces;
 using CropSmartAPI.Core.SessionObjects;
 using CropSmartAPI.DAL.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using static CSharpFunctionalExtensions.Result;
 
 var configuration = GetConfiguration();
@@ -21,6 +22,7 @@ builder.Services.AddTransient<ICropService, CropService>();
 builder.Services.AddTransient<ISessionControlService, SessionControlService>();
 builder.Services.AddSingleton<ISessionList, SessionList>();
 builder.Services.AddScoped<AccessCheckFilter>();
+builder.Services.AddHttpContextAccessor();
 
 
 builder.Services.AddControllers();
@@ -36,6 +38,34 @@ builder.Services.AddHostedService(provider =>
     var memoryStore = provider.GetRequiredService<ISessionList>();
 
     return new SessionCleanupService(memoryStore, sessionLifetimeMinutes, checkIntervalMinutes);
+});
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] { }
+        }
+    });
 });
 
 var app = builder.Build();

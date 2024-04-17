@@ -11,7 +11,7 @@ public class SessionInfo
     public int SessionId { get; set; }
     public string Key { get; set; }
 
-    public string Email { get; set; }
+    public int UserId { get; set; }
 
     public DateTime LastOperationTime { get; set; }
 }

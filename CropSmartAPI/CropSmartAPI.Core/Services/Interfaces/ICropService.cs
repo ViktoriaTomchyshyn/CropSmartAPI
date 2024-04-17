@@ -13,6 +13,6 @@ public interface ICropService
     Task<int> Create(CropDto obj);
     Task<Crop> Delete(int id);
     Task<Crop> Get(int id);
-    Task<List<Crop>> GetByField(int fieldId);
+    Task<List<Crop>> Crops(int userId, int fieldId, string searchQuery);
     Task<int> Update(int id, CropDto newObj);
 }

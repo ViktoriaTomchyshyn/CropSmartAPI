@@ -55,7 +55,7 @@ public class FieldService : IFieldService
         return await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id && p.Userid == userId);
     }
 
-    public async Task<List<Field>> GetAll(int userId,string searchQuery)
+    public async Task<List<Field>> Fields (int userId,string searchQuery)
     {
         if (searchQuery is null ) {
            searchQuery = "";

@@ -46,9 +46,19 @@ public class FertilizerService : IFertilizerService
         return obj;
     }
 
-    public async Task<List<Fertilizer>> GetByCrop(int cropId)
+    public async Task<List<Fertilizer>> Fertilizers(int userId, int cropId, string searchQuery)
     {
-        return await _dbContext.Fertilizers.Where(p => p.CropId == cropId).ToListAsync();
+        if (searchQuery is null)
+        {
+            searchQuery = "";
+        }
+        var result = await _dbContext.Fertilizers.Where(p =>
+            p.Crop.Field.Userid == userId && p.CropId == cropId && (
+                p.Name.Contains(searchQuery) ||
+                p.Quantity.ToString().Contains(searchQuery)
+                )).ToListAsync();
+
+        return result;
     }
 
     public async Task<Fertilizer> Get(int id)

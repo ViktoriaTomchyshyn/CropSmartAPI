@@ -1,4 +1,5 @@
-﻿using CropSmartAPI.Core.Filters;
+﻿using CropSmartAPI.Core.Dto;
+using CropSmartAPI.Core.Filters;
 using CropSmartAPI.Server.Commands.Fertilizer;
 using CropSmartAPI.Server.Commands.User;
 using MediatR;
@@ -19,8 +20,8 @@ public class UserController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost("create")]
-    public async Task<IActionResult> CreateUser([FromHeader(Name = "Key")] string key, [FromQuery] CreateUserQuery query)
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> GetUser([FromRoute] GetUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -32,9 +33,11 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("get")]
-    public async Task<IActionResult> GetUser([FromHeader(Name = "Key")] string key, [FromQuery] GetUserQuery query)
+    // TODO прибрати пароль з апдейту бо це відповідальність AuthController-а
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserDto body)
     {
+        var query = new UpdateUserQuery { Id = id, Body = body };
         var result = await _mediator.Send(query);
 
         if (result.IsFailure)
@@ -45,8 +48,9 @@ public class UserController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPut("update")]
-    public async Task<IActionResult> UpdateUser([FromHeader(Name = "Key")] string key, [FromQuery] UpdateUserQuery query)
+    // TODO delete має повертати void
+    [HttpDelete("{Id}")]
+    public async Task<IActionResult> DeleteUser([FromRoute] DeleteUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -57,18 +61,4 @@ public class UserController : ControllerBase
 
         return Ok(result.Value);
     }
-
-    [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteUser([FromHeader(Name = "Key")] string key, [FromQuery] DeleteUserQuery query)
-    {
-        var result = await _mediator.Send(query);
-
-        if (result.IsFailure)
-        {
-            return NotFound(result.Error);
-        }
-
-        return Ok(result.Value);
-    }
-
 }

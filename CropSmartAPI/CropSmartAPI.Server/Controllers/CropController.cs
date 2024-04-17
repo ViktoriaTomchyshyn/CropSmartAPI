@@ -19,7 +19,7 @@ public class CropController : ControllerBase
     }
 
     [HttpGet("get")]
-    public async Task<IActionResult> GetCrop([FromHeader(Name = "Key")] string key, [FromQuery] GetCropQuery query)
+    public async Task<IActionResult> GetCrop([FromQuery] GetCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -32,8 +32,8 @@ public class CropController : ControllerBase
     }
 
 
-    [HttpGet("getbyfieldid")]
-    public async Task<IActionResult> GetCropsByField([FromHeader(Name = "Key")] string key, [FromQuery] GetCropsByFieldQuery query)
+    [HttpGet("field/crops")]
+    public async Task<IActionResult> GetCropsByField([FromQuery] GetCropsByFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -46,7 +46,7 @@ public class CropController : ControllerBase
     }
 
     [HttpPost("add")]
-    public async Task<IActionResult> AddCrop([FromHeader(Name = "Key")] string key, [FromQuery] AddCropQuery query)
+    public async Task<IActionResult> AddCrop([FromQuery] AddCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -59,7 +59,7 @@ public class CropController : ControllerBase
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> UpdateCrop([FromHeader(Name = "Key")] string key, [FromQuery] UpdateCropQuery query)
+    public async Task<IActionResult> UpdateCrop([FromQuery] UpdateCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -72,7 +72,7 @@ public class CropController : ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteCrop([FromHeader(Name = "Key")] string key, [FromQuery] DeleteCropQuery query)
+    public async Task<IActionResult> DeleteCrop([FromQuery] DeleteCropQuery query)
     {
         var result = await _mediator.Send(query);
 

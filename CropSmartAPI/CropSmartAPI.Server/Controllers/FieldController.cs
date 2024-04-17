@@ -23,7 +23,7 @@ public class FieldController: ControllerBase
 
     
     [HttpGet("get")]
-    public async Task<IActionResult> GetField([FromHeader(Name = "Key")] string key, [FromQuery] GetFieldQuery query)
+    public async Task<IActionResult> GetField([FromQuery] GetFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -36,8 +36,8 @@ public class FieldController: ControllerBase
     }
 
 
-    [HttpGet("getbyuserid")]
-    public async Task<IActionResult> GetFieldsByUser([FromHeader(Name = "Key")] string key, [FromQuery] GetFieldsByUserQuery query)
+    [HttpGet("fields")]
+    public async Task<IActionResult> GetFieldsByUser([FromQuery] GetFieldsByUserQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -50,7 +50,7 @@ public class FieldController: ControllerBase
     }
 
     [HttpPost("add")]
-    public async Task<IActionResult> AddField([FromHeader(Name = "Key")] string key, [FromQuery] AddFieldQuery query)
+    public async Task<IActionResult> AddField([FromQuery] AddFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -63,7 +63,7 @@ public class FieldController: ControllerBase
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> UpdateField([FromHeader(Name = "Key")] string key, [FromQuery] UpdateFieldQuery query)
+    public async Task<IActionResult> UpdateField([FromQuery] UpdateFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -76,7 +76,7 @@ public class FieldController: ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteField([FromHeader(Name = "Key")] string key, [FromQuery] DeleteFieldQuery query)
+    public async Task<IActionResult> DeleteField([FromQuery] DeleteFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
