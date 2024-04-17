@@ -1,0 +1,13 @@
+diff a/CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs b/CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs	(rejected hunks)
+@@ -1,9 +1,7 @@
+ using CropSmartAPI.Core.Services.Interfaces;
+-using System.Net;
+-using System.Web.Http.Controllers;
+-using Microsoft.AspNetCore.Mvc.Filters;
+-using Microsoft.AspNetCore.Mvc;
+ using Microsoft.AspNetCore.Http;
++using Microsoft.AspNetCore.Mvc;
++using Microsoft.AspNetCore.Mvc.Filters;
+ 
+ namespace CropSmartAPI.Core.Filters;
+ 

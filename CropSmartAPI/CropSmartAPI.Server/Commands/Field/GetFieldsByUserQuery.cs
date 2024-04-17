@@ -8,7 +8,6 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class GetFieldsByUserQuery : IRequest<Result<List<FieldDto>, string>>
 {
-    public int UserId { get; set; }
 
     public string? SearchQuery { get; set; } 
 
@@ -16,16 +15,21 @@ public class GetFieldsByUserQuery : IRequest<Result<List<FieldDto>, string>>
     public class Handler : IRequestHandler<GetFieldsByUserQuery, Result<List<FieldDto>, string>>
     {
         private readonly IFieldService _fieldService;
-       
-        public Handler(IFieldService service)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+
+        public Handler(IFieldService service, IHttpContextAccessor httpContextAccessor)
         {
             _fieldService = service;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result<List<FieldDto>, string>> Handle(GetFieldsByUserQuery request,
             CancellationToken cancellationToken)
         {
-            var field = await _fieldService.GetAll(request.UserId, request.SearchQuery);
+            var item = _httpContextAccessor.HttpContext.Items.FirstOrDefault(i=> i.Key == "UserId").Value.ToString();
+            var userId = int.Parse(item);
+            var field = await _fieldService.Fields(userId, request.SearchQuery);
 
             if (!field?.Any() ?? true)
             {

@@ -1,0 +1,579 @@
+Subject: [PATCH] victoria
+---
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/LoginController.cs
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/LoginController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/LoginController.cs
+deleted file mode 100644
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/LoginController.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ /dev/null	(revision 37155fb27299a363bd597e664fcf786445f40c88)
+@@ -1,42 +0,0 @@
+-using CropSmartAPI.Server.Commands.Crop;
+-using CropSmartAPI.Server.Commands.Sessions;
+-using MediatR;
+-using Microsoft.AspNetCore.Mvc;
+-
+-namespace CropSmartAPI.Server.Controllers;
+-
+-public class LoginController : ControllerBase
+-{
+-    private readonly IMediator _mediator;
+-
+-    public LoginController(IMediator mediator)
+-    {
+-        _mediator = mediator;
+-    }
+-
+-    [HttpPost("logIn")]
+-    public async Task<IActionResult> LogIn([FromQuery] LogInQuery query)
+-    {
+-        var result = await _mediator.Send(query);
+-
+-        if (result.IsFailure)
+-        {
+-            return NotFound(result.Error);
+-        }
+-
+-        return Ok(result.Value);
+-    }
+-
+-    [HttpPost("logOut")]
+-    public async Task<IActionResult> LogOut([FromQuery] LogOutQuery query)
+-    {
+-        var result = await _mediator.Send(query);
+-
+-        if (result.IsFailure)
+-        {
+-            return NotFound(result.Error);
+-        }
+-
+-        return Ok(result.Value);
+-    }
+-}
+Index: CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs b/CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs
+--- a/CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Core/Filters/CheckAccessFilter.cs	(date 1713344281782)
+@@ -1,9 +1,7 @@
+ using CropSmartAPI.Core.Services.Interfaces;
+-using System.Net;
+-using System.Web.Http.Controllers;
+-using Microsoft.AspNetCore.Mvc.Filters;
+-using Microsoft.AspNetCore.Mvc;
+ using Microsoft.AspNetCore.Http;
++using Microsoft.AspNetCore.Mvc;
++using Microsoft.AspNetCore.Mvc.Filters;
+ 
+ namespace CropSmartAPI.Core.Filters;
+ 
+@@ -18,13 +16,13 @@
+ 
+     public Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+     {
+-        if (context.HttpContext.Request.Headers.TryGetValue("key", out var headerValues))
++        if (context.HttpContext.Request.Headers.TryGetValue("Authorization", out var headerValues))
+         {
+             string key = headerValues.FirstOrDefault();
+             if (!string.IsNullOrEmpty(key))
+             {
+                 // Check if the key is registered
+-                bool isRegistered =  _sessionControlService.IsLoggedIn(key).Result;
++                bool isRegistered = _sessionControlService.IsLoggedIn(key.Split(' ')[1]).Result;
+ 
+                 if (isRegistered)
+                 {
+@@ -32,11 +30,10 @@
+                     return next();
+                 }
+             }
+-        } 
++        }
+ 
+         // If the header is missing or empty, return Forbidden
+         context.Result = new StatusCodeResult(StatusCodes.Status401Unauthorized);
+         return Task.CompletedTask;
+     }
+-}
+-
++}
+\ No newline at end of file
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs
+new file mode 100644
+--- /dev/null	(date 1713344281785)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs	(date 1713344281785)
+@@ -0,0 +1,57 @@
++using CropSmartAPI.Server.Commands.Sessions;
++using CropSmartAPI.Server.Commands.User;
++using MediatR;
++using Microsoft.AspNetCore.Mvc;
++
++namespace CropSmartAPI.Server.Controllers;
++
++[ApiController]
++[Route("/auth")]
++public class AuthController : ControllerBase
++{
++    private readonly IMediator _mediator;
++
++    public AuthController(IMediator mediator)
++    {
++        _mediator = mediator;
++    }
++
++    [HttpPost("login")]
++    public async Task<IActionResult> LogIn([FromBody] LogInQuery query)
++    {
++        var result = await _mediator.Send(query);
++
++        if (result.IsFailure)
++        {
++            return NotFound(result.Error);
++        }
++
++        return Ok(result.Value);
++    }
++
++    [HttpPost("/register")]
++    public async Task<IActionResult> CreateUser([FromBody] CreateUserQuery query)
++    {
++        var result = await _mediator.Send(query);
++
++        if (result.IsFailure)
++        {
++            return NotFound(result.Error);
++        }
++
++        return Ok(result.Value);
++    }
++
++    [HttpPost("logout")]
++    public async Task<IActionResult> LogOut([FromBody] LogOutQuery query)
++    {
++        var result = await _mediator.Send(query);
++
++        if (result.IsFailure)
++        {
++            return NotFound(result.Error);
++        }
++
++        return Ok(result.Value);
++    }
++}
+\ No newline at end of file
+Index: CropSmartAPI/CropSmartAPI.Server/Commands/User/UpdateUserQuery.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Commands/User/UpdateUserQuery.cs b/CropSmartAPI/CropSmartAPI.Server/Commands/User/UpdateUserQuery.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Commands/User/UpdateUserQuery.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Commands/User/UpdateUserQuery.cs	(date 1713344281783)
+@@ -8,15 +8,12 @@
+ public class UpdateUserQuery : IRequest<Result<int, string>>
+ {
+     public int Id { get; set; }
+-    public string Name { get; set; }
+-    public string Surname { get; set; }
+-    public string Email { get; set; }
+-    public string Password { get; set; }
++    public UpdateUserDto Body { get; set; }
+ 
+     public class Handler : IRequestHandler<UpdateUserQuery, Result<int, string>>
+     {
+         private readonly IUserService _userService;
+-        
++
+         public Handler(IUserService service)
+         {
+             _userService = service;
+@@ -25,12 +22,12 @@
+         public async Task<Result<int, string>> Handle(UpdateUserQuery request,
+             CancellationToken cancellationToken)
+         {
+-           var obj = new UserDto
++            var obj = new UserDto
+             {
+-                Name = request.Name,
+-                Surname = request.Surname,
+-                Email = request.Email,
+-                Password = request.Password
++                Name = request.Body.Name,
++                Surname = request.Body.Surname,
++                Email = request.Body.Email,
++                Password = request.Body.Password
+             };
+ 
+             var id = await _userService.Update(request.Id, obj);
+Index: CropSmartAPI/CropSmartAPI.Server/Program.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Program.cs b/CropSmartAPI/CropSmartAPI.Server/Program.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Program.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Program.cs	(date 1713344281791)
+@@ -4,6 +4,7 @@
+ using CropSmartAPI.Core.SessionObjects;
+ using CropSmartAPI.DAL.Context;
+ using Microsoft.EntityFrameworkCore;
++using Microsoft.OpenApi.Models;
+ using static CSharpFunctionalExtensions.Result;
+ 
+ var configuration = GetConfiguration();
+@@ -38,6 +39,34 @@
+     return new SessionCleanupService(memoryStore, sessionLifetimeMinutes, checkIntervalMinutes);
+ });
+ 
++builder.Services.AddSwaggerGen(c =>
++{
++    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
++    {
++        Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
++        Name = "Authorization",
++        In = ParameterLocation.Header,
++        Type = SecuritySchemeType.Http,
++        Scheme = "bearer",
++        BearerFormat = "JWT"
++    });
++
++    c.AddSecurityRequirement(new OpenApiSecurityRequirement
++    {
++        {
++            new OpenApiSecurityScheme
++            {
++                Reference = new OpenApiReference
++                {
++                    Type = ReferenceType.SecurityScheme,
++                    Id = "Bearer"
++                }
++            },
++            new string[] { }
++        }
++    });
++});
++
+ var app = builder.Build();
+ 
+ // Configure the HTTP request pipeline.
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/UserController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/UserController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/UserController.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/UserController.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/UserController.cs	(date 1713344281790)
+@@ -1,15 +1,14 @@
++using CropSmartAPI.Core.Dto;
+ using CropSmartAPI.Core.Filters;
+-using CropSmartAPI.Server.Commands.Fertilizer;
+ using CropSmartAPI.Server.Commands.User;
+ using MediatR;
+ using Microsoft.AspNetCore.Mvc;
+ 
+ namespace CropSmartAPI.Server.Controllers;
+ 
+-
+ [ApiController]
+ [ServiceFilter(typeof(AccessCheckFilter))]
+-[Route("[controller]")]
++[Route("users")]
+ public class UserController : ControllerBase
+ {
+     private readonly IMediator _mediator;
+@@ -19,21 +18,8 @@
+         _mediator = mediator;
+     }
+ 
+-    [HttpPost("create")]
+-    public async Task<IActionResult> CreateUser([FromHeader(Name = "Key")] string key, [FromQuery] CreateUserQuery query)
+-    {
+-        var result = await _mediator.Send(query);
+-
+-        if (result.IsFailure)
+-        {
+-            return NotFound(result.Error);
+-        }
+-
+-        return Ok(result.Value);
+-    }
+-
+-    [HttpGet("get")]
+-    public async Task<IActionResult> GetUser([FromHeader(Name = "Key")] string key, [FromQuery] GetUserQuery query)
++    [HttpGet("{Id}")]
++    public async Task<IActionResult> GetUser([FromRoute] GetUserQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -45,9 +31,11 @@
+         return Ok(result.Value);
+     }
+ 
+-    [HttpPut("update")]
+-    public async Task<IActionResult> UpdateUser([FromHeader(Name = "Key")] string key, [FromQuery] UpdateUserQuery query)
++    // TODO прибрати пароль з апдейту бо це відповідальність AuthController-а
++    [HttpPut("{id}")]
++    public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserDto body)
+     {
++        var query = new UpdateUserQuery { Id = id, Body = body };
+         var result = await _mediator.Send(query);
+ 
+         if (result.IsFailure)
+@@ -57,9 +45,10 @@
+ 
+         return Ok(result.Value);
+     }
+-
+-    [HttpDelete("delete")]
+-    public async Task<IActionResult> DeleteUser([FromHeader(Name = "Key")] string key, [FromQuery] DeleteUserQuery query)
++    
++    // TODO delete має повертати void
++    [HttpDelete("{Id}")]
++    public async Task<IActionResult> DeleteUser([FromRoute] DeleteUserQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -70,5 +59,4 @@
+ 
+         return Ok(result.Value);
+     }
+-
+-}
++}
+\ No newline at end of file
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs	(date 1713344281788)
+@@ -1,6 +1,5 @@
+ using CropSmartAPI.Core.Filters;
+ using CropSmartAPI.Server.Commands.PredictFertility;
+-using CropSmartAPI.Server.Commands.User;
+ using MediatR;
+ using Microsoft.AspNetCore.Mvc;
+ 
+@@ -19,7 +18,7 @@
+     }
+ 
+     [HttpGet("predictFertility")]
+-    public async Task<IActionResult> PredictFertility([FromHeader(Name = "Key")] string key, [FromQuery] PredictFertilityQuery query)
++    public async Task<IActionResult> PredictFertility([FromQuery] PredictFertilityQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs	(date 1713344281786)
+@@ -1,6 +1,5 @@
+ using CropSmartAPI.Core.Filters;
+ using CropSmartAPI.Server.Commands.Crop;
+-using CropSmartAPI.Server.Commands.Field;
+ using MediatR;
+ using Microsoft.AspNetCore.Mvc;
+ 
+@@ -19,7 +18,7 @@
+     }
+ 
+     [HttpGet("get")]
+-    public async Task<IActionResult> GetCrop([FromHeader(Name = "Key")] string key, [FromQuery] GetCropQuery query)
++    public async Task<IActionResult> GetCrop([FromQuery] GetCropQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -33,7 +32,7 @@
+ 
+ 
+     [HttpGet("getbyfieldid")]
+-    public async Task<IActionResult> GetCropsByField([FromHeader(Name = "Key")] string key, [FromQuery] GetCropsByFieldQuery query)
++    public async Task<IActionResult> GetCropsByField([FromQuery] GetCropsByFieldQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -46,7 +45,7 @@
+     }
+ 
+     [HttpPost("add")]
+-    public async Task<IActionResult> AddCrop([FromHeader(Name = "Key")] string key, [FromQuery] AddCropQuery query)
++    public async Task<IActionResult> AddCrop([FromQuery] AddCropQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -59,7 +58,7 @@
+     }
+ 
+     [HttpPut("update")]
+-    public async Task<IActionResult> UpdateCrop([FromHeader(Name = "Key")] string key, [FromQuery] UpdateCropQuery query)
++    public async Task<IActionResult> UpdateCrop([FromQuery] UpdateCropQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -72,7 +71,7 @@
+     }
+ 
+     [HttpDelete("delete")]
+-    public async Task<IActionResult> DeleteCrop([FromHeader(Name = "Key")] string key, [FromQuery] DeleteCropQuery query)
++    public async Task<IActionResult> DeleteCrop([FromQuery] DeleteCropQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/FieldController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/FieldController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/FieldController.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/FieldController.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/FieldController.cs	(date 1713344281787)
+@@ -1,10 +1,7 @@
+ using CropSmartAPI.Core.Filters;
+-using CropSmartAPI.Server.Commands.Fertilizer;
+ using CropSmartAPI.Server.Commands.Field;
+-using CropSmartAPI.Server.Commands.User;
+ using MediatR;
+ using Microsoft.AspNetCore.Mvc;
+-using Microsoft.AspNetCore.Mvc.Controllers;
+ 
+ namespace CropSmartAPI.Server.Controllers;
+ 
+@@ -23,7 +20,7 @@
+ 
+     
+     [HttpGet("get")]
+-    public async Task<IActionResult> GetField([FromHeader(Name = "Key")] string key, [FromQuery] GetFieldQuery query)
++    public async Task<IActionResult> GetField([FromQuery] GetFieldQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -37,7 +34,7 @@
+ 
+ 
+     [HttpGet("getbyuserid")]
+-    public async Task<IActionResult> GetFieldsByUser([FromHeader(Name = "Key")] string key, [FromQuery] GetFieldsByUserQuery query)
++    public async Task<IActionResult> GetFieldsByUser([FromQuery] GetFieldsByUserQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -50,7 +47,7 @@
+     }
+ 
+     [HttpPost("add")]
+-    public async Task<IActionResult> AddField([FromHeader(Name = "Key")] string key, [FromQuery] AddFieldQuery query)
++    public async Task<IActionResult> AddField([FromQuery] AddFieldQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -63,7 +60,7 @@
+     }
+ 
+     [HttpPut("update")]
+-    public async Task<IActionResult> UpdateField([FromHeader(Name = "Key")] string key, [FromQuery] UpdateFieldQuery query)
++    public async Task<IActionResult> UpdateField([FromQuery] UpdateFieldQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -76,7 +73,7 @@
+     }
+ 
+     [HttpDelete("delete")]
+-    public async Task<IActionResult> DeleteField([FromHeader(Name = "Key")] string key, [FromQuery] DeleteFieldQuery query)
++    public async Task<IActionResult> DeleteField([FromQuery] DeleteFieldQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/FertilizerController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/FertilizerController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/FertilizerController.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/FertilizerController.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/FertilizerController.cs	(date 1713344281787)
+@@ -1,5 +1,4 @@
+ using CropSmartAPI.Core.Filters;
+-using CropSmartAPI.Server.Commands.Crop;
+ using CropSmartAPI.Server.Commands.Fertilizer;
+ using MediatR;
+ using Microsoft.AspNetCore.Mvc;
+@@ -20,7 +19,7 @@
+ 
+ 
+     [HttpGet("get")]
+-    public async Task<IActionResult> GetFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] GetFertilizerQuery query)
++    public async Task<IActionResult> GetFertilizer([FromQuery] GetFertilizerQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -34,7 +33,7 @@
+ 
+ 
+     [HttpGet ("getbycropid")]
+-    public async Task<IActionResult> GetFertilizerByCrop([FromHeader(Name = "Key")] string key, [FromQuery] GetFertilizerByCropQuery query)
++    public async Task<IActionResult> GetFertilizerByCrop([FromQuery] GetFertilizerByCropQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -47,7 +46,7 @@
+     }
+ 
+     [HttpPost("add")]
+-    public async Task<IActionResult> AddFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] AddFertilizerQuery query)
++    public async Task<IActionResult> AddFertilizer([FromQuery] AddFertilizerQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -60,7 +59,7 @@
+     }
+ 
+     [HttpPut("update")]
+-    public async Task<IActionResult> UpdateFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] UpdateFertilizerQuery query)
++    public async Task<IActionResult> UpdateFertilizer([FromQuery] UpdateFertilizerQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+@@ -73,7 +72,7 @@
+     }
+ 
+     [HttpDelete("delete")]
+-    public async Task<IActionResult> DeleteFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] DeleteFertilizerQuery query)
++    public async Task<IActionResult> DeleteFertilizer([FromQuery] DeleteFertilizerQuery query)
+     {
+         var result = await _mediator.Send(query);
+ 
+Index: CropSmartAPI/CropSmartAPI.Core/Dto/UserDto.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Core/Dto/UserDto.cs b/CropSmartAPI/CropSmartAPI.Core/Dto/UserDto.cs
+--- a/CropSmartAPI/CropSmartAPI.Core/Dto/UserDto.cs	(revision 37155fb27299a363bd597e664fcf786445f40c88)
++++ b/CropSmartAPI/CropSmartAPI.Core/Dto/UserDto.cs	(date 1713344281781)
+@@ -15,4 +15,12 @@
+         public string Email { get; set; }
+         public string Password { get; set; }
+     }
++    
++    public class UpdateUserDto
++    {
++        public string Name { get; set; }
++        public string Surname { get; set; }
++        public string Email { get; set; }
++        public string Password { get; set; }
++    }
+ }

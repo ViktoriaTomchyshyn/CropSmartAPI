@@ -8,20 +8,27 @@ namespace CropSmartAPI.Server.Commands.Fertilizer;
 public class GetFertilizerByCropQuery : IRequest<Result<List<FertilizerDto>, string>>
 {
     public int CropId { get; set; }
+    public string? SearchQuery { get; set; }
+
 
     public class Handler : IRequestHandler<GetFertilizerByCropQuery, Result<List<FertilizerDto>, string>>
     {
         private readonly IFertilizerService _fertilizerService;
-       
-        public Handler(IFertilizerService service)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+
+        public Handler(IFertilizerService service, IHttpContextAccessor httpContextAccessor)
         {
             _fertilizerService = service;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result<List<FertilizerDto>, string>> Handle(GetFertilizerByCropQuery request,
             CancellationToken cancellationToken)
         {
-            var fertilizer = await _fertilizerService.GetByCrop(request.CropId);
+            var item = _httpContextAccessor.HttpContext.Items.FirstOrDefault(i => i.Key == "UserId").Value.ToString();
+            var userId = int.Parse(item);
+            var fertilizer = await _fertilizerService.Fertilizers(userId, request.CropId, request.SearchQuery);
 
             if (!fertilizer?.Any() ?? true)
             {

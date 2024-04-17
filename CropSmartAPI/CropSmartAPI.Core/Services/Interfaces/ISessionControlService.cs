@@ -13,4 +13,6 @@ public interface ISessionControlService
     Task<bool> LogOut(string key);
 
     Task<bool> IsLoggedIn(string key);
+
+    Task<int> GetUserIdByKey(string key);
 }

@@ -1,0 +1,8 @@
+diff a/CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/PredictionController.cs	(rejected hunks)
+@@ -1,6 +1,5 @@
+ using CropSmartAPI.Core.Filters;
+ using CropSmartAPI.Server.Commands.PredictFertility;
+-using CropSmartAPI.Server.Commands.User;
+ using MediatR;
+ using Microsoft.AspNetCore.Mvc;
+ 

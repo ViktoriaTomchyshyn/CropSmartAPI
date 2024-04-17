@@ -53,9 +53,22 @@ public class CropService : ICropService
         return await _dbContext.Crops.FirstOrDefaultAsync(p => p.Id == id);
     }
 
-    public async Task<List<Crop>> GetByField(int fieldId)
+    public async Task<List<Crop>> Crops(int userId, int fieldId, string searchQuery)
     {
-        return await _dbContext.Crops.Where(p => p.FieldId == fieldId).ToListAsync();
+        if (searchQuery is null)
+        {
+            searchQuery = "";
+        }
+        var result = await _dbContext.Crops.Where(p =>
+            p.Field.Userid == userId && p.FieldId == fieldId && (
+                p.Name.Contains(searchQuery) ||
+                p.Notes.Contains(searchQuery) ||
+                p.SowingDate.ToString().Contains(searchQuery) ||
+                p.HarverstDate.ToString().Contains(searchQuery) ||
+                p.Fertility.ToString().Contains(searchQuery)
+                )).ToListAsync();
+
+        return result;
     }
 
     public async Task<int> Update(int id, CropDto newObj)

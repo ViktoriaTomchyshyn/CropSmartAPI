@@ -34,13 +34,27 @@ public class SessionControlService : ISessionControlService
         return Task.FromResult(isExisting);
     }
 
+    public Task<int> GetUserIdByKey(string key)
+    {
+        int id = 0;
+        foreach (var session in _memoryStore.Sessions)
+        {
+            if (session.Key == key)
+            {
+                id = session.UserId;
+            }
+        }
+
+        return Task.FromResult(id);
+    }
+
     public Task<string> LogIn(string login, string password)
     {
-        CheckIfValidData(login, password);
-        DeleteOldSessionIfExists(login);
+        var userId = CheckIfValidData(login, password);
+        DeleteOldSessionIfExists(userId.Result);
         //var role = _cacheRepository.GetRole(login); ??
         var key = GenerateKey(login, password);
-        CreateNewSession(login, key);
+        CreateNewSession(userId.Result, key);
         return Task.FromResult(key);
     }
 
@@ -57,7 +71,7 @@ public class SessionControlService : ISessionControlService
 
 
 
-   private Task<bool> CheckIfValidData(string login, string password)
+   private Task<int> CheckIfValidData(string login, string password)
    {
 
         User thatUser = null;
@@ -77,7 +91,7 @@ public class SessionControlService : ISessionControlService
         {
             if (thatUser.Password == CalculatePasswordHash(password))
             {
-                return Task.FromResult(true);
+                return Task.FromResult(thatUser.Id);
             }
             else
             {
@@ -86,10 +100,9 @@ public class SessionControlService : ISessionControlService
         }
    }
 
-
-    private Task<bool> DeleteOldSessionIfExists(string login)
+    private Task<bool> DeleteOldSessionIfExists(int userId)
     {
-        var index = _memoryStore.Sessions.FindIndex(s => s.Email == login);
+        var index = _memoryStore.Sessions.FindIndex(s => s.UserId == userId);
         if (index == -1) return Task.FromResult(false);
         else
         {
@@ -98,9 +111,9 @@ public class SessionControlService : ISessionControlService
         }
     }
 
-    private Task<int> CreateNewSession(string login, string key)
+    private Task<int> CreateNewSession(int userId, string key)
     {
-        var sessionInfo = new SessionInfo() { Key = key, Email = login, LastOperationTime = DateTime.Now };
+        var sessionInfo = new SessionInfo() { Key = key, UserId = userId, LastOperationTime = DateTime.Now };
         var newSession = SessionIDNext(sessionInfo);
         _memoryStore.Sessions.Add(newSession.Result);
         return Task.FromResult(newSession.Result.SessionId);

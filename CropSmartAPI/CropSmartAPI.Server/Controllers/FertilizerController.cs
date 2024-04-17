@@ -20,7 +20,7 @@ public class FertilizerController: ControllerBase
 
 
     [HttpGet("get")]
-    public async Task<IActionResult> GetFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] GetFertilizerQuery query)
+    public async Task<IActionResult> GetFertilizer([FromQuery] GetFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -33,8 +33,8 @@ public class FertilizerController: ControllerBase
     }
 
 
-    [HttpGet ("getbycropid")]
-    public async Task<IActionResult> GetFertilizerByCrop([FromHeader(Name = "Key")] string key, [FromQuery] GetFertilizerByCropQuery query)
+    [HttpGet ("field/crop/fertilizers")]
+    public async Task<IActionResult> GetFertilizerByCrop([FromQuery] GetFertilizerByCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -47,7 +47,7 @@ public class FertilizerController: ControllerBase
     }
 
     [HttpPost("add")]
-    public async Task<IActionResult> AddFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] AddFertilizerQuery query)
+    public async Task<IActionResult> AddFertilizer([FromQuery] AddFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -60,7 +60,7 @@ public class FertilizerController: ControllerBase
     }
 
     [HttpPut("update")]
-    public async Task<IActionResult> UpdateFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] UpdateFertilizerQuery query)
+    public async Task<IActionResult> UpdateFertilizer([FromQuery] UpdateFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -73,7 +73,7 @@ public class FertilizerController: ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteFertilizer([FromHeader(Name = "Key")] string key, [FromQuery] DeleteFertilizerQuery query)
+    public async Task<IActionResult> DeleteFertilizer([FromQuery] DeleteFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
