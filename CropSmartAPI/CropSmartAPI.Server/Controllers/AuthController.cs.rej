@@ -1,0 +1,19 @@
+diff a/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs	(rejected hunks)
+@@ -6,7 +6,7 @@
+ namespace CropSmartAPI.Server.Controllers;
+ 
+ [ApiController]
+-[Route("auth")]
++[Route("/auth")]
+ public class AuthController : ControllerBase
+ {
+     private readonly IMediator _mediator;
+@@ -29,7 +29,7 @@
+         return Ok(result.Value);
+     }
+ 
+-    [HttpPost("register")]
++    [HttpPost("/register")]
+     public async Task<IActionResult> CreateUser([FromBody] CreateUserQuery query)
+     {
+         var result = await _mediator.Send(query);

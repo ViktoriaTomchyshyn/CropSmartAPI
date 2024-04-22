@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CropSmartAPI.Server.Controllers;
 
 [ApiController]
-[Route("/auth")]
+[Route("auth")]
 public class AuthController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -29,7 +29,7 @@ public class AuthController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPost("/register")]
+    [HttpPost("register")]
     public async Task<IActionResult> CreateUser([FromBody] CreateUserQuery query)
     {
         var result = await _mediator.Send(query);

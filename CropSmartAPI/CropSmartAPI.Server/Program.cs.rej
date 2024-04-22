@@ -1,0 +1,36 @@
+diff a/CropSmartAPI/CropSmartAPI.Server/Program.cs b/CropSmartAPI/CropSmartAPI.Server/Program.cs	(rejected hunks)
+@@ -68,18 +68,6 @@
+     });
+ });
+ 
+-builder.Services.AddCors(options =>
+-{
+-    options.AddPolicy(name: "AllowLocalCors",
+-        policy  =>
+-        {
+-            policy.WithOrigins("http://localhost:4200");
+-            policy.AllowCredentials();
+-            policy.AllowAnyHeader();
+-            policy.AllowAnyHeader();
+-        });
+-});
+-
+ var app = builder.Build();
+ 
+ // Configure the HTTP request pipeline.
+@@ -89,8 +77,6 @@
+     app.UseSwaggerUI();
+ }
+ 
+-app.UseCors("AllowLocalCors");
+-
+ app.UseHttpsRedirection();
+ 
+ app.UseAuthorization();
+@@ -128,4 +114,4 @@
+             logger.LogError(ex, "An error occurred creating the DB.");
+         }
+     }
+-}
+\ No newline at end of file
++}

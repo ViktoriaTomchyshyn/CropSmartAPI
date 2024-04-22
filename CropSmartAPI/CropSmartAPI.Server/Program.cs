@@ -69,6 +69,18 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "AllowLocalCors",
+    policy  =>
+        {
+        policy.WithOrigins("http://localhost:4200");
+        policy.AllowCredentials();
+        policy.AllowAnyHeader();
+        policy.AllowAnyHeader();
+                });
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -77,6 +89,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowLocalCors");
 
 app.UseHttpsRedirection();
 

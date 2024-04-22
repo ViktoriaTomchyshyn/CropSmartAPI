@@ -1,0 +1,71 @@
+Subject: [PATCH] victoria
+---
+Index: CropSmartAPI/CropSmartAPI.Server/Program.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Program.cs b/CropSmartAPI/CropSmartAPI.Server/Program.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Program.cs	(date 1713741942407)
++++ b/CropSmartAPI/CropSmartAPI.Server/Program.cs	(revision 602a513c1cbc4f22045581006abd543fd8c99405)
+@@ -68,18 +68,6 @@
+     });
+ });
+ 
+-builder.Services.AddCors(options =>
+-{
+-    options.AddPolicy(name: "AllowLocalCors",
+-        policy  =>
+-        {
+-            policy.WithOrigins("http://localhost:4200");
+-            policy.AllowCredentials();
+-            policy.AllowAnyHeader();
+-            policy.AllowAnyHeader();
+-        });
+-});
+-
+ var app = builder.Build();
+ 
+ // Configure the HTTP request pipeline.
+@@ -89,8 +77,6 @@
+     app.UseSwaggerUI();
+ }
+ 
+-app.UseCors("AllowLocalCors");
+-
+ app.UseHttpsRedirection();
+ 
+ app.UseAuthorization();
+@@ -128,4 +114,4 @@
+             logger.LogError(ex, "An error occurred creating the DB.");
+         }
+     }
+-}
+\ No newline at end of file
++}
+Index: CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs
+--- a/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs	(date 1713741885937)
++++ b/CropSmartAPI/CropSmartAPI.Server/Controllers/AuthController.cs	(revision 602a513c1cbc4f22045581006abd543fd8c99405)
+@@ -6,7 +6,7 @@
+ namespace CropSmartAPI.Server.Controllers;
+ 
+ [ApiController]
+-[Route("auth")]
++[Route("/auth")]
+ public class AuthController : ControllerBase
+ {
+     private readonly IMediator _mediator;
+@@ -29,7 +29,7 @@
+         return Ok(result.Value);
+     }
+ 
+-    [HttpPost("register")]
++    [HttpPost("/register")]
+     public async Task<IActionResult> CreateUser([FromBody] CreateUserQuery query)
+     {
+         var result = await _mediator.Send(query);
