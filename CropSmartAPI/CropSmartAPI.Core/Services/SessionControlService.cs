@@ -48,14 +48,24 @@ public class SessionControlService : ISessionControlService
         return Task.FromResult(id);
     }
 
-    public Task<string> LogIn(string login, string password)
+    public Task<SuccessfulLoginResult> LogIn(string login, string password)
     {
-        var userId = CheckIfValidData(login, password);
-        DeleteOldSessionIfExists(userId.Result);
+        var user = CheckIfValidData(login, password).Result;
+        DeleteOldSessionIfExists(user.Id);
         //var role = _cacheRepository.GetRole(login); ??
         var key = GenerateKey(login, password);
-        CreateNewSession(userId.Result, key);
-        return Task.FromResult(key);
+        CreateNewSession(user.Id, key);
+        return Task.FromResult(new SuccessfulLoginResult
+        {
+            Key = key,
+            UserInfo = new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Name = user.Name,
+                Surname = user.Surname
+            }
+        });
     }
 
     public Task<bool> LogOut(string key)
@@ -71,7 +81,7 @@ public class SessionControlService : ISessionControlService
 
 
 
-   private Task<int> CheckIfValidData(string login, string password)
+   private Task<User> CheckIfValidData(string login, string password)
    {
 
         User thatUser = null;
@@ -91,7 +101,7 @@ public class SessionControlService : ISessionControlService
         {
             if (thatUser.Password == CalculatePasswordHash(password))
             {
-                return Task.FromResult(thatUser.Id);
+                return Task.FromResult(thatUser);
             }
             else
             {

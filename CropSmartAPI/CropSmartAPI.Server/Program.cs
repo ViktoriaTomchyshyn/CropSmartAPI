@@ -20,6 +20,7 @@ builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IFieldService, FieldService>();
 builder.Services.AddTransient<ICropService, CropService>();
 builder.Services.AddTransient<ISessionControlService, SessionControlService>();
+builder.Services.AddTransient<INextCropDefinitionService, NextCropDefinitionService>();
 builder.Services.AddSingleton<ISessionList, SessionList>();
 builder.Services.AddScoped<AccessCheckFilter>();
 builder.Services.AddHttpContextAccessor();

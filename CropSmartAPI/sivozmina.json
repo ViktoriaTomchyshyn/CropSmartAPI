@@ -1,0 +1,4412 @@
+[
+  {
+    "Id": 1,
+    "Culture": "Озиме жито",
+    "Predecessor": "Озима пшениця",
+    "Rate": 2
+  },
+  {
+    "Id": 2,
+    "Culture": "Озиме жито",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 3,
+    "Culture": "Озиме жито",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 4,
+    "Culture": "Озиме жито",
+    "Predecessor": "Яра пшениця",
+    "Rate": 2
+  },
+  {
+    "Id": 5,
+    "Culture": "Озиме жито",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 6,
+    "Culture": "Озиме жито",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 7,
+    "Culture": "Озиме жито",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 1
+  },
+  {
+    "Id": 8,
+    "Culture": "Озиме жито",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 9,
+    "Culture": "Озиме жито",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 10,
+    "Culture": "Озиме жито",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 11,
+    "Culture": "Озиме жито",
+    "Predecessor": "Льон",
+    "Rate": 1
+  },
+  {
+    "Id": 12,
+    "Culture": "Озиме жито",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 13,
+    "Culture": "Озиме жито",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 14,
+    "Culture": "Озиме жито",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 15,
+    "Culture": "Озиме жито",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 16,
+    "Culture": "Озиме жито",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 17,
+    "Culture": "Озиме жито",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 18,
+    "Culture": "Озиме жито",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 19,
+    "Culture": "Озиме жито",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 20,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Озиме жито",
+    "Rate": 0
+  },
+  {
+    "Id": 21,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 22,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 23,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Яра пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 24,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 25,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 26,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 1
+  },
+  {
+    "Id": 27,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 28,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 29,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 30,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Льон",
+    "Rate": 1
+  },
+  {
+    "Id": 31,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 32,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 33,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 34,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 35,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 36,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 37,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 38,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 39,
+    "Culture": "Ячмінь",
+    "Predecessor": "Озиме жито",
+    "Rate": 0
+  },
+  {
+    "Id": 40,
+    "Culture": "Ячмінь",
+    "Predecessor": "Озима пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 41,
+    "Culture": "Ячмінь",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 42,
+    "Culture": "Ячмінь",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 2
+  },
+  {
+    "Id": 43,
+    "Culture": "Ячмінь",
+    "Predecessor": "Яра пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 44,
+    "Culture": "Ячмінь",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 45,
+    "Culture": "Ячмінь",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 46,
+    "Culture": "Ячмінь",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 47,
+    "Culture": "Ячмінь",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 48,
+    "Culture": "Ячмінь",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 49,
+    "Culture": "Ячмінь",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 50,
+    "Culture": "Ячмінь",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 51,
+    "Culture": "Ячмінь",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 52,
+    "Culture": "Ячмінь",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 53,
+    "Culture": "Ячмінь",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 54,
+    "Culture": "Ячмінь",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 55,
+    "Culture": "Ячмінь",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 56,
+    "Culture": "Ячмінь",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 57,
+    "Culture": "Ячмінь",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 58,
+    "Culture": "Ячмінь",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 59,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Озиме жито",
+    "Rate": 2
+  },
+  {
+    "Id": 60,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Озима пшениця",
+    "Rate": 2
+  },
+  {
+    "Id": 61,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Ячмінь",
+    "Rate": 2
+  },
+  {
+    "Id": 62,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 0
+  },
+  {
+    "Id": 63,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Яра пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 64,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Овес",
+    "Rate": 0
+  },
+  {
+    "Id": 65,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 66,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 67,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 68,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 69,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 70,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Льон",
+    "Rate": 0
+  },
+  {
+    "Id": 71,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 72,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 73,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Кукурудза",
+    "Rate": 0
+  },
+  {
+    "Id": 74,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 75,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 76,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 77,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 78,
+    "Culture": "Озимий ріпак",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 79,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Озиме жито",
+    "Rate": 0
+  },
+  {
+    "Id": 80,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Озима пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 81,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 82,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 2
+  },
+  {
+    "Id": 83,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Яра пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 84,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 85,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 86,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 87,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 88,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 89,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 90,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 91,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 92,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 93,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 94,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 95,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 96,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 97,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 98,
+    "Culture": "Яра пшениця",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 99,
+    "Culture": "Овес",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 100,
+    "Culture": "Овес",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 101,
+    "Culture": "Овес",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 102,
+    "Culture": "Овес",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 103,
+    "Culture": "Овес",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 104,
+    "Culture": "Овес",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 105,
+    "Culture": "Овес",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 106,
+    "Culture": "Овес",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 107,
+    "Culture": "Овес",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 108,
+    "Culture": "Овес",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 109,
+    "Culture": "Овес",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 110,
+    "Culture": "Овес",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 111,
+    "Culture": "Овес",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 112,
+    "Culture": "Овес",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 113,
+    "Culture": "Овес",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 114,
+    "Culture": "Овес",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 115,
+    "Culture": "Овес",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 116,
+    "Culture": "Овес",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 117,
+    "Culture": "Овес",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 118,
+    "Culture": "Овес",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 119,
+    "Culture": "Гречка",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 120,
+    "Culture": "Гречка",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 121,
+    "Culture": "Гречка",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 122,
+    "Culture": "Гречка",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 123,
+    "Culture": "Гречка",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 124,
+    "Culture": "Гречка",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 125,
+    "Culture": "Гречка",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 126,
+    "Culture": "Гречка",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 127,
+    "Culture": "Гречка",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 128,
+    "Culture": "Гречка",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 129,
+    "Culture": "Гречка",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 130,
+    "Culture": "Гречка",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 131,
+    "Culture": "Гречка",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 132,
+    "Culture": "Гречка",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 133,
+    "Culture": "Гречка",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 134,
+    "Culture": "Гречка",
+    "Predecessor": "Люпин на силос",
+    "Rate": 1
+  },
+  {
+    "Id": 135,
+    "Culture": "Гречка",
+    "Predecessor": "Однолітні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 136,
+    "Culture": "Гречка",
+    "Predecessor": "Конюшина",
+    "Rate": 1
+  },
+  {
+    "Id": 137,
+    "Culture": "Гречка",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 138,
+    "Culture": "Гречка",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 139,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 140,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 141,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 142,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 143,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 144,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 145,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 146,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 147,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 148,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 149,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 150,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 151,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 152,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 153,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 154,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Люпин на силос",
+    "Rate": 0
+  },
+  {
+    "Id": 155,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Однолітні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 156,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 157,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 158,
+    "Culture": "Люпин на зерно",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 159,
+    "Culture": "Горох",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 160,
+    "Culture": "Горох",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 161,
+    "Culture": "Горох",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 162,
+    "Culture": "Горох",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 163,
+    "Culture": "Горох",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 164,
+    "Culture": "Горох",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 165,
+    "Culture": "Горох",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 166,
+    "Culture": "Горох",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 167,
+    "Culture": "Горох",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 168,
+    "Culture": "Горох",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 169,
+    "Culture": "Горох",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 170,
+    "Culture": "Горох",
+    "Predecessor": "Льон",
+    "Rate": 2
+  },
+  {
+    "Id": 171,
+    "Culture": "Горох",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 172,
+    "Culture": "Горох",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 173,
+    "Culture": "Горох",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 174,
+    "Culture": "Горох",
+    "Predecessor": "Люпин на силос",
+    "Rate": 0
+  },
+  {
+    "Id": 175,
+    "Culture": "Горох",
+    "Predecessor": "Однолітні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 176,
+    "Culture": "Горох",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 177,
+    "Culture": "Горох",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 178,
+    "Culture": "Горох",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 179,
+    "Culture": "Віка",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 180,
+    "Culture": "Віка",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 181,
+    "Culture": "Віка",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 182,
+    "Culture": "Віка",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 183,
+    "Culture": "Віка",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 184,
+    "Culture": "Віка",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 185,
+    "Culture": "Віка",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 186,
+    "Culture": "Віка",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 187,
+    "Culture": "Віка",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 188,
+    "Culture": "Віка",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 189,
+    "Culture": "Віка",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 190,
+    "Culture": "Віка",
+    "Predecessor": "Льон",
+    "Rate": 2
+  },
+  {
+    "Id": 191,
+    "Culture": "Віка",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 192,
+    "Culture": "Віка",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 193,
+    "Culture": "Віка",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 194,
+    "Culture": "Віка",
+    "Predecessor": "Люпин на силос",
+    "Rate": 0
+  },
+  {
+    "Id": 195,
+    "Culture": "Віка",
+    "Predecessor": "Однолітні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 196,
+    "Culture": "Віка",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 197,
+    "Culture": "Віка",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 198,
+    "Culture": "Віка",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 199,
+    "Culture": "Картопля",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 200,
+    "Culture": "Картопля",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 201,
+    "Culture": "Картопля",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 202,
+    "Culture": "Картопля",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 203,
+    "Culture": "Картопля",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 204,
+    "Culture": "Картопля",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 205,
+    "Culture": "Картопля",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 206,
+    "Culture": "Картопля",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 207,
+    "Culture": "Картопля",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 208,
+    "Culture": "Картопля",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 209,
+    "Culture": "Картопля",
+    "Predecessor": "Картопля",
+    "Rate": 2
+  },
+  {
+    "Id": 210,
+    "Culture": "Картопля",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 211,
+    "Culture": "Картопля",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 212,
+    "Culture": "Картопля",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 213,
+    "Culture": "Картопля",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 214,
+    "Culture": "Картопля",
+    "Predecessor": "Люпин на силос",
+    "Rate": 1
+  },
+  {
+    "Id": 215,
+    "Culture": "Картопля",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 216,
+    "Culture": "Картопля",
+    "Predecessor": "Конюшина",
+    "Rate": 1
+  },
+  {
+    "Id": 217,
+    "Culture": "Картопля",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 218,
+    "Culture": "Картопля",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 219,
+    "Culture": "Льон",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 220,
+    "Culture": "Льон",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 221,
+    "Culture": "Льон",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 222,
+    "Culture": "Льон",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 0
+  },
+  {
+    "Id": 223,
+    "Culture": "Льон",
+    "Predecessor": "Яра пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 224,
+    "Culture": "Льон",
+    "Predecessor": "Овес",
+    "Rate": 2
+  },
+  {
+    "Id": 225,
+    "Culture": "Льон",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 226,
+    "Culture": "Льон",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 227,
+    "Culture": "Льон",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 228,
+    "Culture": "Льон",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 229,
+    "Culture": "Льон",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 230,
+    "Culture": "Льон",
+    "Predecessor": "Льон",
+    "Rate": 0
+  },
+  {
+    "Id": 231,
+    "Culture": "Льон",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 232,
+    "Culture": "Льон",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 233,
+    "Culture": "Льон",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 234,
+    "Culture": "Льон",
+    "Predecessor": "Люпин на силос",
+    "Rate": 1
+  },
+  {
+    "Id": 235,
+    "Culture": "Льон",
+    "Predecessor": "Однолітні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 236,
+    "Culture": "Льон",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 237,
+    "Culture": "Льон",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 238,
+    "Culture": "Льон",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 239,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 240,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 241,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 242,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 243,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 244,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 245,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 246,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 247,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 248,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 249,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 250,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 2
+  },
+  {
+    "Id": 251,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 2
+  },
+  {
+    "Id": 252,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 253,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 254,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 255,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 256,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 257,
+    "Culture": "Цукровий буряк",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 258,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 259,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 260,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 261,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 262,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 263,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 264,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 265,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 266,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 267,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 268,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 269,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 270,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 2
+  },
+  {
+    "Id": 271,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 2
+  },
+  {
+    "Id": 272,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 273,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 274,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 275,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 276,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 277,
+    "Culture": "Кормовий буряк",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 278,
+    "Culture": "Кукурудза",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 279,
+    "Culture": "Кукурудза",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 280,
+    "Culture": "Кукурудза",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 281,
+    "Culture": "Кукурудза",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 282,
+    "Culture": "Кукурудза",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 283,
+    "Culture": "Кукурудза",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 284,
+    "Culture": "Кукурудза",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 285,
+    "Culture": "Кукурудза",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 286,
+    "Culture": "Кукурудза",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 287,
+    "Culture": "Кукурудза",
+    "Predecessor": "Віка",
+    "Rate": 3
+  },
+  {
+    "Id": 288,
+    "Culture": "Кукурудза",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 289,
+    "Culture": "Кукурудза",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 290,
+    "Culture": "Кукурудза",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 291,
+    "Culture": "Кукурудза",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 3
+  },
+  {
+    "Id": 292,
+    "Culture": "Кукурудза",
+    "Predecessor": "Кукурудза",
+    "Rate": 3
+  },
+  {
+    "Id": 293,
+    "Culture": "Кукурудза",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 294,
+    "Culture": "Кукурудза",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 295,
+    "Culture": "Кукурудза",
+    "Predecessor": "Конюшина",
+    "Rate": 3
+  },
+  {
+    "Id": 296,
+    "Culture": "Кукурудза",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 297,
+    "Culture": "Кукурудза",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 298,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 299,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 300,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 301,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 302,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 303,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 304,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 305,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 306,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 307,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 308,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 309,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 310,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 311,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 312,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 313,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Люпин на силос",
+    "Rate": 0
+  },
+  {
+    "Id": 314,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Однолітні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 315,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 316,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 317,
+    "Culture": "Люпин на силос",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 318,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 319,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 320,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 321,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 322,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 323,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 324,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 325,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 326,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 327,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 328,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 329,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 330,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 331,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 1
+  },
+  {
+    "Id": 332,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Кукурудза",
+    "Rate": 1
+  },
+  {
+    "Id": 333,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Люпин на силос",
+    "Rate": 0
+  },
+  {
+    "Id": 334,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Однолітні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 335,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 336,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 337,
+    "Culture": "Однолітні трави",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 338,
+    "Culture": "Конюшина",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 339,
+    "Culture": "Конюшина",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 340,
+    "Culture": "Конюшина",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 3
+  },
+  {
+    "Id": 341,
+    "Culture": "Конюшина",
+    "Predecessor": "Яра пшениця",
+    "Rate": 0
+  },
+  {
+    "Id": 342,
+    "Culture": "Конюшина",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 343,
+    "Culture": "Конюшина",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 344,
+    "Culture": "Конюшина",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 345,
+    "Culture": "Конюшина",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 346,
+    "Culture": "Конюшина",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 347,
+    "Culture": "Конюшина",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 348,
+    "Culture": "Конюшина",
+    "Predecessor": "Льон",
+    "Rate": 0
+  },
+  {
+    "Id": 349,
+    "Culture": "Конюшина",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 350,
+    "Culture": "Конюшина",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 351,
+    "Culture": "Конюшина",
+    "Predecessor": "Кукурудза",
+    "Rate": 0
+  },
+  {
+    "Id": 352,
+    "Culture": "Конюшина",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 353,
+    "Culture": "Конюшина",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 354,
+    "Culture": "Конюшина",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 355,
+    "Culture": "Конюшина",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 356,
+    "Culture": "Конюшина",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 357,
+    "Culture": "Люцерна",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 358,
+    "Culture": "Люцерна",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 359,
+    "Culture": "Люцерна",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 360,
+    "Culture": "Люцерна",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 0
+  },
+  {
+    "Id": 361,
+    "Culture": "Люцерна",
+    "Predecessor": "Яра пшениця",
+    "Rate": 2
+  },
+  {
+    "Id": 362,
+    "Culture": "Люцерна",
+    "Predecessor": "Овес",
+    "Rate": 2
+  },
+  {
+    "Id": 363,
+    "Culture": "Люцерна",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 364,
+    "Culture": "Люцерна",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 365,
+    "Culture": "Люцерна",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 366,
+    "Culture": "Люцерна",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 367,
+    "Culture": "Люцерна",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 368,
+    "Culture": "Люцерна",
+    "Predecessor": "Льон",
+    "Rate": 0
+  },
+  {
+    "Id": 369,
+    "Culture": "Люцерна",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 370,
+    "Culture": "Люцерна",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 371,
+    "Culture": "Люцерна",
+    "Predecessor": "Кукурудза",
+    "Rate": 0
+  },
+  {
+    "Id": 372,
+    "Culture": "Люцерна",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 373,
+    "Culture": "Люцерна",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 374,
+    "Culture": "Люцерна",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 375,
+    "Culture": "Люцерна",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 376,
+    "Culture": "Люцерна",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 377,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Озиме жито",
+    "Rate": 3
+  },
+  {
+    "Id": 378,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Озима пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 379,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 380,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Озимий ріпак",
+    "Rate": 0
+  },
+  {
+    "Id": 381,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Яра пшениця",
+    "Rate": 3
+  },
+  {
+    "Id": 382,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 383,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 384,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 385,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 386,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Віка",
+    "Rate": 0
+  },
+  {
+    "Id": 387,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 388,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Льон",
+    "Rate": 3
+  },
+  {
+    "Id": 389,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Цукровий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 390,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Кормовий буряк",
+    "Rate": 0
+  },
+  {
+    "Id": 391,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Кукурудза",
+    "Rate": 0
+  },
+  {
+    "Id": 392,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Люпин на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 393,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Однолітні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 394,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Конюшина",
+    "Rate": 0
+  },
+  {
+    "Id": 395,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 396,
+    "Culture": "Багаторічні злакові",
+    "Predecessor": "Багаторічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 397,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 3
+  },
+  {
+    "Id": 398,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 2
+  },
+  {
+    "Id": 399,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 0
+  },
+  {
+    "Id": 400,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Жито озиме",
+    "Rate": 0
+  },
+  {
+    "Id": 401,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 402,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Овес",
+    "Rate": 0
+  },
+  {
+    "Id": 403,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 404,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 405,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Просо",
+    "Rate": 0
+  },
+  {
+    "Id": 406,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 407,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 408,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 409,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 410,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 411,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 412,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 413,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Однорічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 414,
+    "Culture": "Пшениця озима",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 415,
+    "Culture": "Озиме жито",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 3
+  },
+  {
+    "Id": 416,
+    "Culture": "Озиме жито",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 417,
+    "Culture": "Озиме жито",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 2
+  },
+  {
+    "Id": 418,
+    "Culture": "Озиме жито",
+    "Predecessor": "Жито озиме",
+    "Rate": 0
+  },
+  {
+    "Id": 419,
+    "Culture": "Озиме жито",
+    "Predecessor": "Ячмінь",
+    "Rate": 2
+  },
+  {
+    "Id": 420,
+    "Culture": "Озиме жито",
+    "Predecessor": "Овес",
+    "Rate": 2
+  },
+  {
+    "Id": 421,
+    "Culture": "Озиме жито",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 422,
+    "Culture": "Озиме жито",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 423,
+    "Culture": "Озиме жито",
+    "Predecessor": "Просо",
+    "Rate": 0
+  },
+  {
+    "Id": 424,
+    "Culture": "Озиме жито",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 425,
+    "Culture": "Озиме жито",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 426,
+    "Culture": "Озиме жито",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 427,
+    "Culture": "Озиме жито",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 428,
+    "Culture": "Озиме жито",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 429,
+    "Culture": "Озиме жито",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 430,
+    "Culture": "Озиме жито",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 431,
+    "Culture": "Озиме жито",
+    "Predecessor": "Однорічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 432,
+    "Culture": "Озиме жито",
+    "Predecessor": "Люцерна",
+    "Rate": 3
+  },
+  {
+    "Id": 433,
+    "Culture": "Ячмінь",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 434,
+    "Culture": "Ячмінь",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 1
+  },
+  {
+    "Id": 435,
+    "Culture": "Ячмінь",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 2
+  },
+  {
+    "Id": 436,
+    "Culture": "Ячмінь",
+    "Predecessor": "Жито озиме",
+    "Rate": 2
+  },
+  {
+    "Id": 437,
+    "Culture": "Ячмінь",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 438,
+    "Culture": "Ячмінь",
+    "Predecessor": "Овес",
+    "Rate": 0
+  },
+  {
+    "Id": 439,
+    "Culture": "Ячмінь",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 440,
+    "Culture": "Ячмінь",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 441,
+    "Culture": "Ячмінь",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 442,
+    "Culture": "Ячмінь",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 443,
+    "Culture": "Ячмінь",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 2
+  },
+  {
+    "Id": 444,
+    "Culture": "Ячмінь",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 445,
+    "Culture": "Ячмінь",
+    "Predecessor": "Соя",
+    "Rate": 3
+  },
+  {
+    "Id": 446,
+    "Culture": "Ячмінь",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 447,
+    "Culture": "Ячмінь",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 448,
+    "Culture": "Ячмінь",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 2
+  },
+  {
+    "Id": 449,
+    "Culture": "Ячмінь",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 450,
+    "Culture": "Ячмінь",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 451,
+    "Culture": "Овес",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 452,
+    "Culture": "Овес",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 1
+  },
+  {
+    "Id": 453,
+    "Culture": "Овес",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 2
+  },
+  {
+    "Id": 454,
+    "Culture": "Овес",
+    "Predecessor": "Жито озиме",
+    "Rate": 2
+  },
+  {
+    "Id": 455,
+    "Culture": "Овес",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 456,
+    "Culture": "Овес",
+    "Predecessor": "Овес",
+    "Rate": 0
+  },
+  {
+    "Id": 457,
+    "Culture": "Овес",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 458,
+    "Culture": "Овес",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 459,
+    "Culture": "Овес",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 460,
+    "Culture": "Овес",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 461,
+    "Culture": "Овес",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 2
+  },
+  {
+    "Id": 462,
+    "Culture": "Овес",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 463,
+    "Culture": "Овес",
+    "Predecessor": "Соя",
+    "Rate": 3
+  },
+  {
+    "Id": 464,
+    "Culture": "Овес",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 465,
+    "Culture": "Овес",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 466,
+    "Culture": "Овес",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 2
+  },
+  {
+    "Id": 467,
+    "Culture": "Овес",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 468,
+    "Culture": "Овес",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 469,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 470,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 471,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 472,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 473,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Ячмінь",
+    "Rate": 2
+  },
+  {
+    "Id": 474,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Овес",
+    "Rate": 2
+  },
+  {
+    "Id": 475,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 476,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 477,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 478,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 479,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 480,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 481,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Соя",
+    "Rate": 3
+  },
+  {
+    "Id": 482,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Картопля",
+    "Rate": 2
+  },
+  {
+    "Id": 483,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 484,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 2
+  },
+  {
+    "Id": 485,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Однорічні трави",
+    "Rate": 0
+  },
+  {
+    "Id": 486,
+    "Culture": "Кукурудза на зерно",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 487,
+    "Culture": "Горох",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 488,
+    "Culture": "Горох",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 1
+  },
+  {
+    "Id": 489,
+    "Culture": "Горох",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 490,
+    "Culture": "Горох",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 491,
+    "Culture": "Горох",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 492,
+    "Culture": "Горох",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 493,
+    "Culture": "Горох",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 494,
+    "Culture": "Горох",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 495,
+    "Culture": "Горох",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 496,
+    "Culture": "Горох",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 497,
+    "Culture": "Горох",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 3
+  },
+  {
+    "Id": 498,
+    "Culture": "Горох",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 499,
+    "Culture": "Горох",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 500,
+    "Culture": "Горох",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 501,
+    "Culture": "Горох",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 502,
+    "Culture": "Горох",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 3
+  },
+  {
+    "Id": 503,
+    "Culture": "Горох",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 504,
+    "Culture": "Горох",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 505,
+    "Culture": "Просо",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 506,
+    "Culture": "Просо",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 507,
+    "Culture": "Просо",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 508,
+    "Culture": "Просо",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 509,
+    "Culture": "Просо",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 510,
+    "Culture": "Просо",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 511,
+    "Culture": "Просо",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 512,
+    "Culture": "Просо",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 513,
+    "Culture": "Просо",
+    "Predecessor": "Просо",
+    "Rate": 0
+  },
+  {
+    "Id": 514,
+    "Culture": "Просо",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 515,
+    "Culture": "Просо",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 3
+  },
+  {
+    "Id": 516,
+    "Culture": "Просо",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 517,
+    "Culture": "Просо",
+    "Predecessor": "Соя",
+    "Rate": 3
+  },
+  {
+    "Id": 518,
+    "Culture": "Просо",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 519,
+    "Culture": "Просо",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 520,
+    "Culture": "Просо",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 3
+  },
+  {
+    "Id": 521,
+    "Culture": "Просо",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 522,
+    "Culture": "Просо",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 523,
+    "Culture": "Гречка",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 524,
+    "Culture": "Гречка",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 525,
+    "Culture": "Гречка",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 526,
+    "Culture": "Гречка",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 527,
+    "Culture": "Гречка",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 528,
+    "Culture": "Гречка",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 529,
+    "Culture": "Гречка",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 530,
+    "Culture": "Гречка",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 531,
+    "Culture": "Гречка",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 532,
+    "Culture": "Гречка",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 533,
+    "Culture": "Гречка",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 3
+  },
+  {
+    "Id": 534,
+    "Culture": "Гречка",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 535,
+    "Culture": "Гречка",
+    "Predecessor": "Соя",
+    "Rate": 2
+  },
+  {
+    "Id": 536,
+    "Culture": "Гречка",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 537,
+    "Culture": "Гречка",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 538,
+    "Culture": "Гречка",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 3
+  },
+  {
+    "Id": 539,
+    "Culture": "Гречка",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 540,
+    "Culture": "Гречка",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 541,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 542,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 543,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 2
+  },
+  {
+    "Id": 544,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Жито озиме",
+    "Rate": 0
+  },
+  {
+    "Id": 545,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Ячмінь",
+    "Rate": 0
+  },
+  {
+    "Id": 546,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Овес",
+    "Rate": 0
+  },
+  {
+    "Id": 547,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 548,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 549,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Просо",
+    "Rate": 0
+  },
+  {
+    "Id": 550,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 551,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 552,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 553,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 554,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 555,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 0
+  },
+  {
+    "Id": 556,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 557,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 558,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 559,
+    "Culture": "Соняшник",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 560,
+    "Culture": "Соняшник",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 1
+  },
+  {
+    "Id": 561,
+    "Culture": "Соняшник",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 562,
+    "Culture": "Соняшник",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 563,
+    "Culture": "Соняшник",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 564,
+    "Culture": "Соняшник",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 565,
+    "Culture": "Соняшник",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 566,
+    "Culture": "Соняшник",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 567,
+    "Culture": "Соняшник",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 568,
+    "Culture": "Соняшник",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 569,
+    "Culture": "Соняшник",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 570,
+    "Culture": "Соняшник",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 571,
+    "Culture": "Соняшник",
+    "Predecessor": "Соя",
+    "Rate": 2
+  },
+  {
+    "Id": 572,
+    "Culture": "Соняшник",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 573,
+    "Culture": "Соняшник",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 574,
+    "Culture": "Соняшник",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 575,
+    "Culture": "Соняшник",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 576,
+    "Culture": "Соняшник",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 577,
+    "Culture": "Соя",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 578,
+    "Culture": "Соя",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 579,
+    "Culture": "Соя",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 580,
+    "Culture": "Соя",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 581,
+    "Culture": "Соя",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 582,
+    "Culture": "Соя",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 583,
+    "Culture": "Соя",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 584,
+    "Culture": "Соя",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 585,
+    "Culture": "Соя",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 586,
+    "Culture": "Соя",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 587,
+    "Culture": "Соя",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 2
+  },
+  {
+    "Id": 588,
+    "Culture": "Соя",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 589,
+    "Culture": "Соя",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 590,
+    "Culture": "Соя",
+    "Predecessor": "Картопля",
+    "Rate": 1
+  },
+  {
+    "Id": 591,
+    "Culture": "Соя",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 592,
+    "Culture": "Соя",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 2
+  },
+  {
+    "Id": 593,
+    "Culture": "Соя",
+    "Predecessor": "Однорічні трави",
+    "Rate": 2
+  },
+  {
+    "Id": 594,
+    "Culture": "Соя",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 595,
+    "Culture": "Картопля",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 596,
+    "Culture": "Картопля",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 597,
+    "Culture": "Картопля",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 598,
+    "Culture": "Картопля",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 599,
+    "Culture": "Картопля",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 600,
+    "Culture": "Картопля",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 601,
+    "Culture": "Картопля",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 602,
+    "Culture": "Картопля",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 603,
+    "Culture": "Картопля",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 604,
+    "Culture": "Картопля",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 605,
+    "Culture": "Картопля",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 606,
+    "Culture": "Картопля",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 607,
+    "Culture": "Картопля",
+    "Predecessor": "Соя",
+    "Rate": 1
+  },
+  {
+    "Id": 608,
+    "Culture": "Картопля",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 609,
+    "Culture": "Картопля",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 610,
+    "Culture": "Картопля",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 611,
+    "Culture": "Картопля",
+    "Predecessor": "Однорічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 612,
+    "Culture": "Картопля",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 613,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 614,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 615,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 616,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 617,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 618,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 619,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 620,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 621,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 622,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 623,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 2
+  },
+  {
+    "Id": 624,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Соняшник",
+    "Rate": 2
+  },
+  {
+    "Id": 625,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Соя",
+    "Rate": 3
+  },
+  {
+    "Id": 626,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 627,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 628,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 2
+  },
+  {
+    "Id": 629,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 630,
+    "Culture": "Кукурудза на силос",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 631,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 632,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 633,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 634,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Жито озиме",
+    "Rate": 2
+  },
+  {
+    "Id": 635,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Ячмінь",
+    "Rate": 2
+  },
+  {
+    "Id": 636,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Овес",
+    "Rate": 0
+  },
+  {
+    "Id": 637,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 638,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Горох",
+    "Rate": 1
+  },
+  {
+    "Id": 639,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Просо",
+    "Rate": 0
+  },
+  {
+    "Id": 640,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Гречка",
+    "Rate": 0
+  },
+  {
+    "Id": 641,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 642,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 643,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 644,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Картопля",
+    "Rate": 0
+  },
+  {
+    "Id": 645,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 646,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 647,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 648,
+    "Culture": "Кормові коренеплоди",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 649,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 650,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 1
+  },
+  {
+    "Id": 651,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 652,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 653,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 654,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 655,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 656,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Горох",
+    "Rate": 3
+  },
+  {
+    "Id": 657,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Просо",
+    "Rate": 3
+  },
+  {
+    "Id": 658,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Гречка",
+    "Rate": 3
+  },
+  {
+    "Id": 659,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 3
+  },
+  {
+    "Id": 660,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Соняшник",
+    "Rate": 2
+  },
+  {
+    "Id": 661,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Соя",
+    "Rate": 2
+  },
+  {
+    "Id": 662,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Картопля",
+    "Rate": 3
+  },
+  {
+    "Id": 663,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 3
+  },
+  {
+    "Id": 664,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 3
+  },
+  {
+    "Id": 665,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Однорічні трави",
+    "Rate": 1
+  },
+  {
+    "Id": 666,
+    "Culture": "Однорічні трави",
+    "Predecessor": "Люцерна",
+    "Rate": 1
+  },
+  {
+    "Id": 667,
+    "Culture": "Люцерна",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 1
+  },
+  {
+    "Id": 668,
+    "Culture": "Люцерна",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 1
+  },
+  {
+    "Id": 669,
+    "Culture": "Люцерна",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 670,
+    "Culture": "Люцерна",
+    "Predecessor": "Жито озиме",
+    "Rate": 2
+  },
+  {
+    "Id": 671,
+    "Culture": "Люцерна",
+    "Predecessor": "Ячмінь",
+    "Rate": 3
+  },
+  {
+    "Id": 672,
+    "Culture": "Люцерна",
+    "Predecessor": "Овес",
+    "Rate": 3
+  },
+  {
+    "Id": 673,
+    "Culture": "Люцерна",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 674,
+    "Culture": "Люцерна",
+    "Predecessor": "Горох",
+    "Rate": 0
+  },
+  {
+    "Id": 675,
+    "Culture": "Люцерна",
+    "Predecessor": "Просо",
+    "Rate": 2
+  },
+  {
+    "Id": 676,
+    "Culture": "Люцерна",
+    "Predecessor": "Гречка",
+    "Rate": 2
+  },
+  {
+    "Id": 677,
+    "Culture": "Люцерна",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 678,
+    "Culture": "Люцерна",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 679,
+    "Culture": "Люцерна",
+    "Predecessor": "Соя",
+    "Rate": 0
+  },
+  {
+    "Id": 680,
+    "Culture": "Люцерна",
+    "Predecessor": "Картопля",
+    "Rate": 2
+  },
+  {
+    "Id": 681,
+    "Culture": "Люцерна",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 682,
+    "Culture": "Люцерна",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 2
+  },
+  {
+    "Id": 683,
+    "Culture": "Люцерна",
+    "Predecessor": "Однорічні трави",
+    "Rate": 3
+  },
+  {
+    "Id": 684,
+    "Culture": "Люцерна",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 685,
+    "Culture": "Ріпак",
+    "Predecessor": "Чистий та зайнятий пар",
+    "Rate": 0
+  },
+  {
+    "Id": 686,
+    "Culture": "Ріпак",
+    "Predecessor": "Пшениця озима по пару",
+    "Rate": 3
+  },
+  {
+    "Id": 687,
+    "Culture": "Ріпак",
+    "Predecessor": "Пшен.озима по непар.",
+    "Rate": 3
+  },
+  {
+    "Id": 688,
+    "Culture": "Ріпак",
+    "Predecessor": "Жито озиме",
+    "Rate": 3
+  },
+  {
+    "Id": 689,
+    "Culture": "Ріпак",
+    "Predecessor": "Ячмінь",
+    "Rate": 2
+  },
+  {
+    "Id": 690,
+    "Culture": "Ріпак",
+    "Predecessor": "Овес",
+    "Rate": 2
+  },
+  {
+    "Id": 691,
+    "Culture": "Ріпак",
+    "Predecessor": "Кукурудза на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 692,
+    "Culture": "Ріпак",
+    "Predecessor": "Горох",
+    "Rate": 2
+  },
+  {
+    "Id": 693,
+    "Culture": "Ріпак",
+    "Predecessor": "Просо",
+    "Rate": 1
+  },
+  {
+    "Id": 694,
+    "Culture": "Ріпак",
+    "Predecessor": "Гречка",
+    "Rate": 1
+  },
+  {
+    "Id": 695,
+    "Culture": "Ріпак",
+    "Predecessor": "Цукрові буряки",
+    "Rate": 0
+  },
+  {
+    "Id": 696,
+    "Culture": "Ріпак",
+    "Predecessor": "Соняшник",
+    "Rate": 0
+  },
+  {
+    "Id": 697,
+    "Culture": "Ріпак",
+    "Predecessor": "Соя",
+    "Rate": 2
+  },
+  {
+    "Id": 698,
+    "Culture": "Ріпак",
+    "Predecessor": "Картопля",
+    "Rate": 2
+  },
+  {
+    "Id": 699,
+    "Culture": "Ріпак",
+    "Predecessor": "Кукурудза на силос",
+    "Rate": 2
+  },
+  {
+    "Id": 700,
+    "Culture": "Ріпак",
+    "Predecessor": "Кормові коренеплоди",
+    "Rate": 0
+  },
+  {
+    "Id": 701,
+    "Culture": "Ріпак",
+    "Predecessor": "Однорічні трави",
+    "Rate": 2
+  },
+  {
+    "Id": 702,
+    "Culture": "Ріпак",
+    "Predecessor": "Люцерна",
+    "Rate": 0
+  },
+  {
+    "Id": 703,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 704,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 3
+  },
+  {
+    "Id": 705,
+    "Culture": "Озима пшениця",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 1
+  },
+  {
+    "Id": 706,
+    "Culture": "Озиме жито",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 707,
+    "Culture": "Озиме жито",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 3
+  },
+  {
+    "Id": 708,
+    "Culture": "Озиме жито",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 1
+  },
+  {
+    "Id": 709,
+    "Culture": "Ячмінь",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 710,
+    "Culture": "Ячмінь",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 3
+  },
+  {
+    "Id": 711,
+    "Culture": "Ячмінь",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 712,
+    "Culture": "Овес",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 713,
+    "Culture": "Овес",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 3
+  },
+  {
+    "Id": 714,
+    "Culture": "Овес",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 715,
+    "Culture": "Кукурудза",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 716,
+    "Culture": "Кукурудза",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 3
+  },
+  {
+    "Id": 717,
+    "Culture": "Кукурудза",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 718,
+    "Culture": "Горох",
+    "Predecessor": "Бобові",
+    "Rate": 0
+  },
+  {
+    "Id": 719,
+    "Culture": "Горох",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 0
+  },
+  {
+    "Id": 720,
+    "Culture": "Горох",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 721,
+    "Culture": "Люпин",
+    "Predecessor": "Бобові",
+    "Rate": 0
+  },
+  {
+    "Id": 722,
+    "Culture": "Люпин",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 0
+  },
+  {
+    "Id": 723,
+    "Culture": "Люпин",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 0
+  },
+  {
+    "Id": 724,
+    "Culture": "Льон",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 725,
+    "Culture": "Льон",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 0
+  },
+  {
+    "Id": 726,
+    "Culture": "Льон",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 727,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Бобові",
+    "Rate": 1
+  },
+  {
+    "Id": 728,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 1
+  },
+  {
+    "Id": 729,
+    "Culture": "Цукрові буряки",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 2
+  },
+  {
+    "Id": 730,
+    "Culture": "Картопля",
+    "Predecessor": "Бобові",
+    "Rate": 3
+  },
+  {
+    "Id": 731,
+    "Culture": "Картопля",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 1
+  },
+  {
+    "Id": 732,
+    "Culture": "Картопля",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  },
+  {
+    "Id": 733,
+    "Culture": "Соняшник",
+    "Predecessor": "Бобові",
+    "Rate": 0
+  },
+  {
+    "Id": 734,
+    "Culture": "Соняшник",
+    "Predecessor": "Люпин на зелену масу",
+    "Rate": 1
+  },
+  {
+    "Id": 735,
+    "Culture": "Соняшник",
+    "Predecessor": "Люпин на зерно",
+    "Rate": 3
+  }
+]
