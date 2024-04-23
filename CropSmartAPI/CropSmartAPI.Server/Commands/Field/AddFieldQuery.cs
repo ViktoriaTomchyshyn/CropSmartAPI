@@ -4,6 +4,9 @@ using CropSmartAPI.DAL.Entities;
 using CropSmartAPI.Server.Commands.User;
 using CSharpFunctionalExtensions;
 using MediatR;
+using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CropSmartAPI.Server.Commands.Field;
 

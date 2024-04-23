@@ -5,6 +5,7 @@ using CropSmartAPI.Core.SessionObjects;
 using CropSmartAPI.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Web.Http;
 using static CSharpFunctionalExtensions.Result;
 
 var configuration = GetConfiguration();
@@ -67,7 +68,10 @@ builder.Services.AddSwaggerGen(c =>
             new string[] { }
         }
     });
+
+    c.SchemaFilter<EnumSchemaFilter>();
 });
+
 
 builder.Services.AddCors(options =>
 {
