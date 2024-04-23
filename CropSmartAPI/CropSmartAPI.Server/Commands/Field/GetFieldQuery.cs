@@ -8,22 +8,25 @@ namespace CropSmartAPI.Server.Commands.Field;
 
 public class GetFieldQuery : IRequest<Result<FieldDto, string>>
 {
-    public int UserId { get; set; }
     public int Id { get; set; }
 
     public class Handler : IRequestHandler<GetFieldQuery, Result<FieldDto, string>>
     {
         private readonly IFieldService _fieldService;
-        
-        public Handler(IFieldService service)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public Handler(IFieldService service, IHttpContextAccessor httpContextAccessor)
         {
             _fieldService = service;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result<FieldDto, string>> Handle(GetFieldQuery request,
             CancellationToken cancellationToken)
         {
-            var obj = await _fieldService.Get(request.UserId, request.Id);
+            var item = _httpContextAccessor.HttpContext.Items.FirstOrDefault(i => i.Key == "UserId").Value.ToString();
+            var userId = int.Parse(item);
+            var obj = await _fieldService.Get(userId, request.Id);
 
             if (obj == null)
             {

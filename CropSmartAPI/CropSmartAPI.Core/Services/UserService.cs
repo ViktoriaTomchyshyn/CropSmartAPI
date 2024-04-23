@@ -26,6 +26,11 @@ namespace CropSmartAPI.Core.Services
 
         public async Task<int> Create(UserDto obj)
         {
+            var checkEmail = _dbContext.Users.Any(u => u.Email == obj.Email);
+            if (checkEmail)
+            {
+                throw new ArgumentException("There is already user with this email");
+            }
             var newObj = new User()
             {
                 Name = obj.Name,

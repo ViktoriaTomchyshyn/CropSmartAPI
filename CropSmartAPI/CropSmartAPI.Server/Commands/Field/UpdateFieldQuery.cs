@@ -17,20 +17,23 @@ public class UpdateFieldQuery : IRequest<Result<int, string>>
     public SoilType SoilType { get; set; }
     public double CoordinateX { get; set; }
     public double CoordinateY { get; set; }
-    public int Userid { get; set; }
 
     public class Handler : IRequestHandler<UpdateFieldQuery, Result<int, string>>
     {
         private readonly IFieldService _fieldService;
-        
-        public Handler(IFieldService service)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public Handler(IFieldService service, IHttpContextAccessor httpContextAccessor)
         {
             _fieldService = service;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result<int, string>> Handle(UpdateFieldQuery request,
             CancellationToken cancellationToken)
         {
+            var item = _httpContextAccessor.HttpContext.Items.FirstOrDefault(i => i.Key == "UserId").Value.ToString();
+            var userId = int.Parse(item);
             var obj = new FieldDto
             {
                 Name = request.Name,
@@ -40,7 +43,7 @@ public class UpdateFieldQuery : IRequest<Result<int, string>>
                 SoilType = request.SoilType,
                 CoordinateX = request.CoordinateX,
                 CoordinateY = request.CoordinateY,
-                Userid = request.Userid,
+                Userid = userId,
             };
 
             var id = await _fieldService.Update(request.Id, obj);
