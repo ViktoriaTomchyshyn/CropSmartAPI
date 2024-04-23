@@ -30,4 +30,17 @@ public class PredictionController : ControllerBase
 
         return Ok(result.Value);
     }
+
+    [HttpGet("getRecommendedCultures")]
+    public async Task<IActionResult> GetRecommendedCultures([FromQuery] GetRecommendedCulturesQuery query)
+    {
+        var result = await _mediator.Send(query);
+
+        if (result.IsFailure)
+        {
+            return NotFound(result.Error);
+        }
+
+        return Ok(result.Value);
+    }
 }

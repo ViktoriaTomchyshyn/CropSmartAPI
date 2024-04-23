@@ -1,8 +1,10 @@
-﻿using CropSmartAPI.Core.PredictObjects;
+﻿using CropSmartAPI.Core.Dto;
+using CropSmartAPI.Core.PredictObjects;
 using CropSmartAPI.Core.Services.Interfaces;
 using CropSmartAPI.DAL.Context;
 using CropSmartAPI.DAL.Entities;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +39,13 @@ public class NextCropDefinitionService: INextCropDefinitionService
                 });
             }
 
-           // var predecessors = new List<string>();
+            var sivozminaData = LoadSivozminaDataFromFile("D:\\універ\\4 курс\\diploma\\CropSmartAPI\\CropSmartAPI\\sivozmina.json");
+            if (sivozminaData == null)
+            {
+                throw new Exception("File sivozmina.json didn`t load correctly");
+            }
+
+            // var predecessors = new List<string>();
 
             //foreach (var crop in crops)
             //{
@@ -55,6 +63,24 @@ public class NextCropDefinitionService: INextCropDefinitionService
         {
             _logger.LogError(ex, "An error occurred while analyzing crop rotation.");
             return Task.FromResult(new CropRotationResult());
+        }
+    }
+
+
+    private List<CultureRateDto> LoadSivozminaDataFromFile(string filePath)
+    {
+        try
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string json =  reader.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<CultureRateDto>>(json);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while reading the sivozmina data file.");
+            return null;
         }
     }
 }
