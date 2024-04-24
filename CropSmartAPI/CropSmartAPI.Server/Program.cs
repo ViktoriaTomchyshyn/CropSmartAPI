@@ -3,10 +3,9 @@ using CropSmartAPI.Core.Services;
 using CropSmartAPI.Core.Services.Interfaces;
 using CropSmartAPI.Core.SessionObjects;
 using CropSmartAPI.DAL.Context;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.OpenApi.Models;
-using System.Web.Http;
-using static CSharpFunctionalExtensions.Result;
 
 var configuration = GetConfiguration();
 var builder = WebApplication.CreateBuilder(args);
@@ -125,7 +124,7 @@ async void CreateDbIfNotExists(IHost host)
         try
         {
             var context = services.GetRequiredService<DataContext>();
-            await context.Database.EnsureCreatedAsync();
+            context.Database.GetService<IMigrator>().Migrate();
         }
         catch (Exception ex)
         {

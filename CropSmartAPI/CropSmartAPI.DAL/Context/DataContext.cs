@@ -1,7 +1,5 @@
 ﻿using CropSmartAPI.DAL.Entities;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-
 
 namespace CropSmartAPI.DAL.Context;
 
@@ -14,27 +12,23 @@ public class DataContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-
+        bool useSql = Environment.GetEnvironmentVariable("USE_SQL_SERVER") == "true";
         if (!optionsBuilder.IsConfigured) // Ensure this is not already configured from elsewhere
         {
-            // Check if SQL Server connection can be established
-            try
+            if (useSql)
             {
-                SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-JJTRH2D;Initial Catalog=CropSmartDB;Integrated Security=True");
-                sqlConnection.Open();
-                sqlConnection.Close();
-
-                // If SQL Server connection is successful, use SQL Server
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-JJTRH2D;Initial Catalog=CropSmartDB;Integrated Security=True");
+                optionsBuilder.UseSqlServer(
+                    @"Data Source=DESKTOP-JJTRH2D;Initial Catalog=CropSmartDB;Integrated Security=True");
             }
-            catch (Exception)
+            else
             {
-                // If SQL Server connection fails, use SQLite
                 optionsBuilder.UseSqlite("Data Source=cropsmartDB.db");
             }
         }
-        //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-JJTRH2D;Initial Catalog=CropSmartDB;Integrated Security=True");
     }
+    //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-JJTRH2D;Initial Catalog=CropSmartDB;Integrated Security=True");
+
+
     public async Task CompleteAsync()
     {
         await SaveChangesAsync();
