@@ -1,18 +1,14 @@
 ﻿using CropSmartAPI.Core.Filters;
-using CropSmartAPI.Server.Commands.Fertilizer;
 using CropSmartAPI.Server.Commands.Field;
-using CropSmartAPI.Server.Commands.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace CropSmartAPI.Server.Controllers;
 
-
 [ApiController]
 [ServiceFilter(typeof(AccessCheckFilter))]
-[Route("[controller]")]
-public class FieldController: ControllerBase
+[Route("fields")]
+public class FieldController : ControllerBase
 {
     private readonly IMediator _mediator;
 
@@ -21,9 +17,22 @@ public class FieldController: ControllerBase
         _mediator = mediator;
     }
 
-    
-    [HttpGet("get")]
-    public async Task<IActionResult> GetField([FromQuery] GetFieldQuery query)
+
+    [HttpGet]
+    public async Task<IActionResult> GetFields([FromQuery] GetFieldsByUserQuery query)
+    {
+        var result = await _mediator.Send(query);
+
+        if (result.IsFailure)
+        {
+            return NotFound(result.Error);
+        }
+
+        return Ok(result.Value);
+    }
+
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> GetField([FromRoute] GetFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -36,8 +45,8 @@ public class FieldController: ControllerBase
     }
 
 
-    [HttpGet("fields")]
-    public async Task<IActionResult> GetFieldsByUser([FromQuery] GetFieldsByUserQuery query)
+    [HttpPost]
+    public async Task<IActionResult> AddField([FromBody] AddFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -49,8 +58,8 @@ public class FieldController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPost("add")]
-    public async Task<IActionResult> AddField([FromQuery] AddFieldQuery query)
+    [HttpPut]
+    public async Task<IActionResult> UpdateField([FromBody] UpdateFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -62,8 +71,8 @@ public class FieldController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPut("update")]
-    public async Task<IActionResult> UpdateField([FromQuery] UpdateFieldQuery query)
+    [HttpDelete("{Id}")]
+    public async Task<IActionResult> DeleteField([FromRoute] DeleteFieldQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -74,18 +83,4 @@ public class FieldController: ControllerBase
 
         return Ok(result.Value);
     }
-
-    [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteField([FromQuery] DeleteFieldQuery query)
-    {
-        var result = await _mediator.Send(query);
-
-        if (result.IsFailure)
-        {
-            return NotFound(result.Error);
-        }
-
-        return Ok(result.Value);
-    }
-
 }

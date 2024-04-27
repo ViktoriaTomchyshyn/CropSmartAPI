@@ -29,7 +29,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddHostedService(provider =>
@@ -75,14 +74,14 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "AllowLocalCors",
-    policy  =>
+        policy =>
         {
-        policy.WithOrigins("http://localhost:4200");
-        policy.AllowCredentials();
-        policy.AllowAnyHeader();
-        policy.AllowAnyHeader();
-                });
-    });
+            policy.WithOrigins("http://localhost:4200");
+            policy.AllowCredentials();
+            policy.AllowAnyHeader();
+            policy.AllowAnyHeader();
+        });
+});
 
 var app = builder.Build();
 
