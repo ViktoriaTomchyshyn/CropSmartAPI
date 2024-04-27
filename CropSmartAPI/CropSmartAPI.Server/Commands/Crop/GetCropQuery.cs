@@ -1,6 +1,5 @@
 ﻿using CropSmartAPI.Core.Dto;
 using CropSmartAPI.Core.Services.Interfaces;
-using CropSmartAPI.Server.Commands.Field;
 using CSharpFunctionalExtensions;
 using MediatR;
 

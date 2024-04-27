@@ -27,7 +27,7 @@ public class DeleteFieldQuery : IRequest<Result<FieldDto, string>>
         {
             var item = _httpContextAccessor.HttpContext.Items.FirstOrDefault(i => i.Key == "UserId").Value.ToString();
             var userId = int.Parse(item);
-            var obj = await _fieldService.Delete(userId, request.Id);
+            var obj = _fieldService.Delete(userId, request.Id);
 
             if (obj == null)
             {

@@ -4,11 +4,6 @@ using CropSmartAPI.DAL.Context;
 using CropSmartAPI.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CropSmartAPI.Core.Services;
 
@@ -22,6 +17,7 @@ public class FieldService : IFieldService
         _dbContext = dataContext;
         _logger = logger;
     }
+
     public async Task<int> Create(FieldDto obj)
     {
         var newObj = new Field()
@@ -40,13 +36,16 @@ public class FieldService : IFieldService
         return result.Entity.Id;
     }
 
-    public async Task<Field> Delete(int userId, int id)
+    public Field? Delete(int userId, int id)
     {
-        var obj = await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id && p.Userid == userId);
+        var obj = _dbContext.Fields.FirstOrDefault(p => p.Id == id && p.Userid == userId);
         if (obj == null)
+        {
             return null;
+        }
 
-        await _dbContext.CompleteAsync();
+        _dbContext.Fields.Remove(obj);
+        _dbContext.SaveChanges();
         return obj;
     }
 
@@ -55,11 +54,13 @@ public class FieldService : IFieldService
         return await _dbContext.Fields.FirstOrDefaultAsync(p => p.Id == id && p.Userid == userId);
     }
 
-    public async Task<List<Field>> Fields (int userId,string searchQuery)
+    public async Task<List<Field>> Fields(int userId, string searchQuery)
     {
-        if (searchQuery is null ) {
-           searchQuery = "";
+        if (searchQuery is null)
+        {
+            searchQuery = "";
         }
+
         var result = await _dbContext.Fields.Where(p =>
             p.Userid == userId && (
                 p.Name.Contains(searchQuery) ||

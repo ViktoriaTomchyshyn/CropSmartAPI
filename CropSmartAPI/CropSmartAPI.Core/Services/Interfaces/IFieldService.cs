@@ -11,7 +11,7 @@ namespace CropSmartAPI.Core.Services.Interfaces;
 public interface IFieldService
 {
     Task<int> Create(FieldDto obj);
-    Task<Field> Delete(int userId, int id);
+    public Field? Delete(int userId, int id);
     Task<Field> Get(int userId, int id);
     Task<List<Field>> Fields(int userId, string searchQuery);
     Task<int> Update(int id, FieldDto newObj);
