@@ -8,9 +8,9 @@ namespace CropSmartAPI.Core.PredictObjects;
 
 public class CropRotationResult
 {
-    public List<string> RecommendedCrops { get; set; }
+    public List<string> RecommendedCrops { get; set; } = new List<string>();
 
-    public List<string> AllowedCrops { get; set; }
+    public List<string> AllowedCrops { get; set; } = new List<string>();
 
-    public List<string> AvoidedCrops { get; set; }
+    public List<string> AvoidedCrops { get; set; } = new List<string>();
 }
