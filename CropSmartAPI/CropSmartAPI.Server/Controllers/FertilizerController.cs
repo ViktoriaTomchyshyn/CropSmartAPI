@@ -8,7 +8,7 @@ namespace CropSmartAPI.Server.Controllers;
 
 [ApiController]
 [ServiceFilter(typeof(AccessCheckFilter))]
-[Route("[controller]")]
+[Route("fertilizers")]
 public class FertilizerController: ControllerBase
 {
     private readonly IMediator _mediator;
@@ -19,8 +19,8 @@ public class FertilizerController: ControllerBase
     }
 
 
-    [HttpGet("get")]
-    public async Task<IActionResult> GetFertilizer([FromQuery] GetFertilizerQuery query)
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> GetFertilizer([FromRoute] GetFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -33,7 +33,7 @@ public class FertilizerController: ControllerBase
     }
 
 
-    [HttpGet ("field/crop/fertilizers")]
+    [HttpGet]
     public async Task<IActionResult> GetFertilizerByCrop([FromQuery] GetFertilizerByCropQuery query)
     {
         var result = await _mediator.Send(query);
@@ -46,8 +46,8 @@ public class FertilizerController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPost("add")]
-    public async Task<IActionResult> AddFertilizer([FromQuery] AddFertilizerQuery query)
+    [HttpPost]
+    public async Task<IActionResult> AddFertilizer([FromBody] AddFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -59,8 +59,8 @@ public class FertilizerController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPut("update")]
-    public async Task<IActionResult> UpdateFertilizer([FromQuery] UpdateFertilizerQuery query)
+    [HttpPut]
+    public async Task<IActionResult> UpdateFertilizer([FromBody] UpdateFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -72,8 +72,8 @@ public class FertilizerController: ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteFertilizer([FromQuery] DeleteFertilizerQuery query)
+    [HttpDelete("{Id}")]
+    public async Task<IActionResult> DeleteFertilizer([FromRoute] DeleteFertilizerQuery query)
     {
         var result = await _mediator.Send(query);
 

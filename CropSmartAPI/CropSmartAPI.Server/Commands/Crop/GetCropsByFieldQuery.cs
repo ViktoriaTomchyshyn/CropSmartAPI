@@ -30,11 +30,6 @@ public class GetCropsByFieldQuery : IRequest<Result<List<CropDto>, string>>
             var userId = int.Parse(item);
             var crop = await _cropService.Crops(userId, request.FieldId, request.SearchQuery);
 
-            if (!crop?.Any() ?? true)
-            {
-                return Result.Failure<List<CropDto>, string>("Crop not found");
-            }
-
             var result = crop.Select(p => new CropDto
             {
                 Id = p.Id,

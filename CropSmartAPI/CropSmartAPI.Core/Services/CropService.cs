@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Plotly.NET.StyleParam.DrawingStyle;
 
 namespace CropSmartAPI.Core.Services;
 
@@ -40,11 +41,14 @@ public class CropService : ICropService
 
     public async Task<Crop> Delete(int id)
     {
-        var obj = await _dbContext.Crops.FirstOrDefaultAsync(p => p.Id == id);
+        var obj = _dbContext.Crops.FirstOrDefault(p => p.Id == id);
         if (obj == null)
+        {
             return null;
+        }
 
-        await _dbContext.CompleteAsync();
+        _dbContext.Crops.Remove(obj);
+        _dbContext.SaveChanges();
         return obj;
     }
 
