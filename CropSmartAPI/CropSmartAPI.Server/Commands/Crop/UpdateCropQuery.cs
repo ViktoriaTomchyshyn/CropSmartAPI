@@ -13,8 +13,8 @@ public class UpdateCropQuery : IRequest<Result<int, string>>
     public string Name { get; set; }
     public DateTime SowingDate { get; set; }
     public DateTime HarvestDate { get; set; }
-    public double Fertility { get; set; }
-    public string Notes { get; set; }
+    public double? Fertility { get; set; }
+    public string? Notes { get; set; }
     public int FieldId { get; set; }
 
     public class Handler : IRequestHandler<UpdateCropQuery, Result<int, string>>
