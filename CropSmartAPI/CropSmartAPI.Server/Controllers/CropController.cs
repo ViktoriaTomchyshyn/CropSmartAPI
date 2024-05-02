@@ -8,7 +8,7 @@ namespace CropSmartAPI.Server.Controllers;
 
 [ApiController]
 [ServiceFilter(typeof(AccessCheckFilter))]
-[Route("[controller]")]
+[Route("crops")]
 public class CropController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -18,8 +18,8 @@ public class CropController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("get")]
-    public async Task<IActionResult> GetCrop([FromQuery] GetCropQuery query)
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> GetCrop([FromRoute] GetCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -32,7 +32,7 @@ public class CropController : ControllerBase
     }
 
 
-    [HttpGet("field/crops")]
+    [HttpGet]
     public async Task<IActionResult> GetCropsByField([FromQuery] GetCropsByFieldQuery query)
     {
         var result = await _mediator.Send(query);
@@ -45,8 +45,8 @@ public class CropController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPost("add")]
-    public async Task<IActionResult> AddCrop([FromQuery] AddCropQuery query)
+    [HttpPost]
+    public async Task<IActionResult> AddCrop([FromBody] AddCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -58,8 +58,8 @@ public class CropController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPut("update")]
-    public async Task<IActionResult> UpdateCrop([FromQuery] UpdateCropQuery query)
+    [HttpPut]
+    public async Task<IActionResult> UpdateCrop([FromBody] UpdateCropQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -71,8 +71,8 @@ public class CropController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpDelete("delete")]
-    public async Task<IActionResult> DeleteCrop([FromQuery] DeleteCropQuery query)
+    [HttpDelete("{Id}")]
+    public async Task<IActionResult> DeleteCrop([FromRoute] DeleteCropQuery query)
     {
         var result = await _mediator.Send(query);
 

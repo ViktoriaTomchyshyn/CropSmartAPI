@@ -30,10 +30,6 @@ public class GetFertilizerByCropQuery : IRequest<Result<List<FertilizerDto>, str
             var userId = int.Parse(item);
             var fertilizer = await _fertilizerService.Fertilizers(userId, request.CropId, request.SearchQuery);
 
-            if (!fertilizer?.Any() ?? true)
-            {
-                return Result.Failure<List<FertilizerDto>, string>("Fertilizer not found");
-            }
 
             var result = fertilizer.Select(p => new FertilizerDto
             {

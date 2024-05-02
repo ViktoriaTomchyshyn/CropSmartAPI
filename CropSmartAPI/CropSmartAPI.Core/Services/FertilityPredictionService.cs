@@ -53,14 +53,14 @@ public class FertilityPredictionService : IFertilityPredictionService
 
     private float GetAverageFertility(List<Crop> crops)
     {
-        var cropsWithFertility = crops.Where(crop => crop.Fertility != 0);
+        var cropsWithFertility = crops.Where(crop => crop.Fertility != 0 && crop.Fertility != null);
 
         if (!cropsWithFertility.Any())
         {
             return 0; // or throw exception, return NaN, etc.
         }
 
-        double totalFertility = cropsWithFertility.Sum(crop => crop.Fertility);
+        double totalFertility = (double)cropsWithFertility.Sum(crop => crop.Fertility);
         double averageFertility = totalFertility / cropsWithFertility.Count();
 
         return ((float)averageFertility);
