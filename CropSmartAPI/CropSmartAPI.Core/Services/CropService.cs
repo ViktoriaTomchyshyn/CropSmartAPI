@@ -30,7 +30,7 @@ public class CropService : ICropService
             Name = obj.Name,
             Fertility = obj.Fertility,
             FieldId = obj.FieldId,
-            HarverstDate = obj.HarverstDate,
+            HarverstDate = obj.HarvestDate,
             SowingDate = obj.SowingDate,
             Notes = obj.Notes
         };
@@ -77,14 +77,14 @@ public class CropService : ICropService
 
     public async Task<int> Update(int id, CropDto newObj)
     {
-        Crop existingObj = await _dbContext.Crops.FirstOrDefaultAsync(p => p.Id == id);
+        Crop? existingObj = await _dbContext.Crops.FirstOrDefaultAsync(p => p.Id == id);
         if (existingObj == null)
             throw new ArgumentException("Crop not found");
 
         existingObj.Name = newObj.Name;
         existingObj.Fertility = newObj.Fertility;
         existingObj.SowingDate = newObj.SowingDate;
-        existingObj.HarverstDate = newObj.HarverstDate;
+        existingObj.HarverstDate = newObj.HarvestDate;
         existingObj.Notes = newObj.Notes;
         existingObj.FieldId = newObj.FieldId;
 

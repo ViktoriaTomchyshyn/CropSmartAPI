@@ -1,8 +1,0 @@
-diff a/CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs b/CropSmartAPI/CropSmartAPI.Server/Controllers/CropController.cs	(rejected hunks)
-@@ -1,6 +1,5 @@
- using CropSmartAPI.Core.Filters;
- using CropSmartAPI.Server.Commands.Crop;
--using CropSmartAPI.Server.Commands.Field;
- using MediatR;
- using Microsoft.AspNetCore.Mvc;
- 

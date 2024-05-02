@@ -12,7 +12,7 @@ public class UpdateCropQuery : IRequest<Result<int, string>>
     public int Id { get; set; }
     public string Name { get; set; }
     public DateTime SowingDate { get; set; }
-    public DateTime HarverstDate { get; set; }
+    public DateTime HarvestDate { get; set; }
     public double Fertility { get; set; }
     public string Notes { get; set; }
     public int FieldId { get; set; }
@@ -33,7 +33,7 @@ public class UpdateCropQuery : IRequest<Result<int, string>>
             {
                 Name = request.Name,
                 SowingDate = request.SowingDate,
-                HarverstDate = request.HarverstDate,
+                HarvestDate = request.HarvestDate,
                 Fertility = request.Fertility,
                 Notes = request.Notes,
                 FieldId = request.FieldId,

@@ -1,8 +1,5 @@
 ﻿using CropSmartAPI.Core.Dto;
-using CropSmartAPI.Core.Services;
 using CropSmartAPI.Core.Services.Interfaces;
-using CropSmartAPI.DAL.Entities;
-using CropSmartAPI.Server.Commands.Field;
 using CSharpFunctionalExtensions;
 using MediatR;
 
@@ -12,7 +9,7 @@ public class AddCropQuery : IRequest<Result<int, string>>
 {
     public string Name { get; set; }
     public DateTime SowingDate { get; set; }
-    public DateTime HarverstDate { get; set; }
+    public DateTime HarvestDate { get; set; }
     public double? Fertility { get; set; }
     public string Notes { get; set; }
     public int FieldId { get; set; }
@@ -34,7 +31,7 @@ public class AddCropQuery : IRequest<Result<int, string>>
             {
                 Name = request.Name,
                 SowingDate = request.SowingDate,
-                HarverstDate = request.HarverstDate,
+                HarvestDate = request.HarvestDate,
                 Fertility = request.Fertility,
                 Notes = request.Notes,
                 FieldId = request.FieldId,

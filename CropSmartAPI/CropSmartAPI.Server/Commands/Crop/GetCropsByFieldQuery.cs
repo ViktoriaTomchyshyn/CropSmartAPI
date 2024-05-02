@@ -35,7 +35,7 @@ public class GetCropsByFieldQuery : IRequest<Result<List<CropDto>, string>>
                 Id = p.Id,
                 Name = p.Name,
                 SowingDate = p.SowingDate,
-                HarverstDate = p.HarverstDate,
+                HarvestDate = p.HarverstDate,
                 Fertility = p.Fertility,
                 Notes = p.Notes,
                 FieldId = p.FieldId,

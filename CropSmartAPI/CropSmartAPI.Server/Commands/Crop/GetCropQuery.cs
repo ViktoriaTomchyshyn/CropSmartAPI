@@ -33,7 +33,7 @@ public class GetCropQuery : IRequest<Result<CropDto, string>>
                 Id = obj.Id,
                 Name = obj.Name,
                 SowingDate = obj.SowingDate,
-                HarverstDate = obj.HarverstDate,
+                HarvestDate = obj.HarverstDate,
                 Fertility = obj.Fertility,
                 Notes = obj.Notes,
                 FieldId = obj.FieldId
