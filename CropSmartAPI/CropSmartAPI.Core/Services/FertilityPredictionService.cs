@@ -27,6 +27,16 @@ public class FertilityPredictionService : IFertilityPredictionService
     public async Task<PredictResult> PredictFertility(int fieldId)
     {
         var crops = await _dbContext.Crops.Where(p => p.FieldId == fieldId).ToListAsync();
+        if (!crops.Any())
+        {
+            return new PredictResult()
+            {
+                LowerFertilityValue = 0,
+                UpperFertilityValue = 0,
+                AverageFertilityValue = 0,
+                ResultType = 0
+            };
+        }
         var modelInput = GetAverageFertility(crops);
 
         var sampleData = new CropPredictModel.ModelInput()
@@ -38,9 +48,11 @@ public class FertilityPredictionService : IFertilityPredictionService
 
         var lowerValue = result.Fertility_LB[0];
         var upperValue = result.Fertility_UB[0];
+        if (upperValue > 100) upperValue = 100;
         var averageValue = (lowerValue + upperValue) / 2;
 
         _logger.LogInformation(lowerValue + ", " + upperValue);
+
 
         return new PredictResult()
         {
@@ -70,12 +82,12 @@ public class FertilityPredictionService : IFertilityPredictionService
     {
         var averageValue = (lowerValue + upperValue) / 2;
 
-        if (averageValue < 165)
+        if (averageValue < 50)
         {
             return ResultType.Poor;
         }
 
-        if (averageValue < 200)
+        if (averageValue < 80)
         {
             return ResultType.Medium;
         }

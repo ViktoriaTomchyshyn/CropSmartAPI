@@ -18,8 +18,8 @@ public class PredictionController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("predictFertility")]
-    public async Task<IActionResult> PredictFertility([FromQuery] PredictFertilityQuery query)
+    [HttpGet("predictFertility/{FieldId}")]
+    public async Task<IActionResult> PredictFertility([FromRoute] PredictFertilityQuery query)
     {
         var result = await _mediator.Send(query);
 
@@ -31,8 +31,8 @@ public class PredictionController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpGet("getRecommendedCultures")]
-    public async Task<IActionResult> GetRecommendedCultures([FromQuery] GetRecommendedCulturesQuery query)
+    [HttpGet("getRecommendedCultures/{FieldId}")]
+    public async Task<IActionResult> GetRecommendedCultures([FromRoute] GetRecommendedCulturesQuery query)
     {
         var result = await _mediator.Send(query);
 

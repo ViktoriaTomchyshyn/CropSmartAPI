@@ -87,7 +87,7 @@ namespace CropSmart_ML
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Forecasting.ForecastBySsa(windowSize:2,seriesLength:10,trainSize:11,horizon:10,outputColumnName:@"Fertility",inputColumnName:@"Fertility",confidenceLowerBoundColumn:@"Fertility_LB",confidenceUpperBoundColumn:@"Fertility_UB");
+            var pipeline = mlContext.Forecasting.ForecastBySsa(windowSize:2,seriesLength:10,trainSize:28,horizon:5,outputColumnName:@"Fertility",inputColumnName:@"Fertility",confidenceLowerBoundColumn:@"Fertility_LB",confidenceUpperBoundColumn:@"Fertility_UB");
 
             return pipeline;
         }
